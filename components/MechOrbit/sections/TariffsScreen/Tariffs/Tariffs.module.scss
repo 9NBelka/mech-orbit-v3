@@ -1,0 +1,631 @@
+.textContentForTwoBlock {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.sliderWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 5;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: rgba(24, 24, 24, 0.9);
+  border: 0.01vw solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  & .arrowIcon {
+    width: 1.2vw;
+    height: 1.2vw;
+    fill: white;
+  }
+
+  &:hover {
+    background: rgba(60, 60, 60, 0.9);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.left {
+  left: -3vw;
+}
+
+.right {
+  right: -3vw;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.9vw;
+  margin-top: 1.5vw;
+  width: 100vw;
+  padding-bottom: 1vw;
+  transition: transform 0.4s ease;
+
+  & .card {
+    flex: 0 0 25vw;
+  }
+
+  & .card {
+    flex: 0 0 20vw; // фиксированная ширина карточки
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(24, 24, 24, 1);
+    border-radius: 0.75vw;
+    padding: 1.5vw 1.75vw;
+    border: 0.01vw solid rgba(255, 255, 255, 0);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      border: 0.01vw solid rgba(255, 255, 255, 0.1);
+    }
+
+    &.cardPurple {
+      border: 0.1vw solid rgba(65, 51, 82, 1);
+      background: linear-gradient(336.75deg, #171717 -3.35%, #1c1428 101.03%);
+
+      &:hover {
+        border: 0.1vw solid rgb(83, 65, 105);
+      }
+    }
+
+    &.transparent {
+      visibility: hidden;
+    }
+
+    & .headerCard {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & .title {
+        font-size: 0.85vw;
+        color: var(--color-blue);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-smallStrong);
+        line-height: var(--font-lineh-normal);
+
+        &.titlePurple {
+          color: rgba(225, 135, 255, 1);
+        }
+      }
+
+      & .mainStatusBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5vw 0.6vw;
+        background: rgba(24, 31, 43, 1);
+        border-radius: 1vw;
+        gap: 0.4vw;
+
+        & .badgeIndicator {
+          width: 0.8vw;
+          height: 0.8vw;
+          fill: rgba(179, 186, 197, 1);
+        }
+
+        & .mainStatus {
+          font-size: 0.7vw;
+          color: var(--color-white);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-normal);
+        }
+      }
+    }
+
+    & .blockPrice {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5vw;
+
+      & .textPrice {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        font-size: 1.4vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-lineh-small);
+        gap: 0.2vw;
+
+        & span {
+          font-size: 0.7vw;
+          color: var(--color-light-gray-for-fly-block);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-smallStrong);
+          line-height: var(--font-lineh-small);
+        }
+
+        & .oldPrice {
+          font-size: 1.1vw;
+          text-decoration: line-through;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    & .listBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25vw;
+      margin-top: 2vw;
+
+      & .pointListBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .pointListTextBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5vw;
+
+          &.greyColor {
+            opacity: 0.2;
+          }
+
+          & .checkmarkIcon {
+            width: 1vw;
+            height: 1vw;
+            fill: var(--color-light-blue-for-icon);
+          }
+
+          & .titleList {
+            font-size: 0.9vw;
+            color: var(--color-white);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+
+        & .pointListStatusBlock {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.5vw;
+          padding: 0.15vw 0vw;
+          background: rgba(24, 31, 43, 1);
+          border-radius: 0.4vw;
+          gap: 0.25vw;
+
+          & .pointListBadgeIndicator {
+            width: 0.75vw;
+            height: 0.75vw;
+            border-radius: 50%;
+            fill: var(--color-light-gray-for-traffic);
+          }
+
+          & .pointListMainStatus {
+            font-size: 0.85vw;
+            color: var(--color-light-gray-for-traffic);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+      }
+    }
+
+    & .tagsAndText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2vw;
+
+      & .tagBlocks {
+        display: flex;
+        flex-direction: row;
+      }
+
+      & .tagBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0.25vw;
+
+        &:first-child {
+          padding: 0;
+        }
+
+        & .tagText {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 1vw;
+          color: var(--color-light-gray);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-small);
+          gap: 0.3vw;
+        }
+      }
+
+      & .textLaterBlock {
+        display: flex;
+
+        & .textLater {
+          font-size: 0.65vw;
+          color: var(--color-light-gray-for-fly-block);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-small);
+        }
+      }
+    }
+
+    & .buttonBlock {
+      display: flex;
+      width: 100%;
+      margin-top: 1.5vw;
+      & .button {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: var(--color-blue);
+        padding: 0.55vw 0vw;
+        font-size: 0.75vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-lineh-small);
+        border-radius: 1.1vw;
+        cursor: pointer;
+        gap: 0.5vw;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+
+        &.buttonPurple {
+          background: linear-gradient(90deg, #3b82f6 0%, #5d2390 100%);
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+
+        & .buttonIcon {
+          width: 0.8vw;
+          height: 0.8vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    gap: 2vw;
+    margin-top: 3vw;
+    width: 100vw;
+    padding-bottom: 1vw;
+
+    // Отступ слева
+    &::before {
+      content: '';
+      flex: 0 0 5vw;
+    }
+
+    // Отступ справа
+    &::after {
+      content: '';
+      flex: 0 0 5vw;
+    }
+
+    & .card {
+      flex: 0 0 25vw;
+    }
+
+    & .card {
+      flex: 0 0 41vw; // фиксированная ширина карточки
+      border-radius: 1vw;
+      padding: 3vw 3vw;
+
+      &:hover {
+        border: 0.01vw solid rgba(255, 255, 255, 0.1);
+      }
+
+      &.cardPurple {
+        &:hover {
+          border: 0.1vw solid rgba(65, 51, 82, 1);
+        }
+      }
+
+      & .headerCard {
+        & .title {
+          font-size: 2vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 0.75vw 1.5vw;
+          border-radius: 1vw;
+          gap: 1vw;
+
+          & .badgeIndicator {
+            width: 1.5vw;
+            height: 1.5vw;
+          }
+
+          & .mainStatus {
+            font-size: 1.6vw;
+          }
+        }
+      }
+
+      & .blockPrice {
+        margin-top: 2vw;
+
+        & .textPrice {
+          font-size: 2.8vw;
+          gap: 0.75vw;
+
+          & span {
+            font-size: 1.6vw;
+          }
+
+          & .oldPrice {
+            font-size: 2vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 1vw;
+        margin-top: 3vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            gap: 1.5vw;
+
+            & .checkmarkIcon {
+              width: 2vw;
+              height: 2vw;
+            }
+
+            & .titleList {
+              font-size: 1.8vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            width: 5vw;
+            padding: 0.3vw 0vw;
+            border-radius: 0.75vw;
+            gap: 0.75vw;
+
+            & .pointListBadgeIndicator {
+              width: 1.5vw;
+              height: 1.5vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 1.8vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndText {
+        margin-top: 4vw;
+
+        & .tagBlock {
+          padding-left: 0.25vw;
+
+          & .tagText {
+            font-size: 2vw;
+            gap: 0.3vw;
+          }
+        }
+
+        & .textLaterBlock {
+          & .textLater {
+            font-size: 1.6vw;
+          }
+        }
+      }
+
+      & .buttonBlock {
+        margin-top: 2vw;
+        & .button {
+          padding: 1.2vw 0vw;
+          font-size: 1.8vw;
+          border-radius: 2vw;
+          cursor: pointer;
+          gap: 1vw;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1);
+          }
+
+          &.buttonPurple {
+            &:hover {
+              transform: scale(1);
+            }
+          }
+
+          & .buttonIcon {
+            width: 2vw;
+            height: 2vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    gap: 5vw;
+    margin-top: 6vw;
+    width: 100vw;
+    padding-bottom: 1vw;
+
+    // Отступ слева
+    &::before {
+      content: '';
+      flex: 0 0 1vw;
+    }
+
+    // Отступ справа
+    &::after {
+      content: '';
+      flex: 0 0 1vw;
+    }
+
+    & .card {
+      flex: 0 0 5vw;
+    }
+
+    & .card {
+      flex: 0 0 80vw; // фиксированная ширина карточки
+      border-radius: 2vw;
+      padding: 5vw;
+
+      & .headerCard {
+        & .title {
+          font-size: 4.6vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 1.25vw 2.5vw;
+          border-radius: 1.5vw;
+          gap: 1.5vw;
+
+          & .badgeIndicator {
+            width: 3vw;
+            height: 3vw;
+          }
+
+          & .mainStatus {
+            font-size: 3.2vw;
+          }
+        }
+      }
+
+      & .blockPrice {
+        margin-top: 5vw;
+
+        & .textPrice {
+          font-size: 6vw;
+          gap: 0.75vw;
+
+          & span {
+            font-size: 3.6vw;
+          }
+
+          & .oldPrice {
+            font-size: 4.4vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 3vw;
+        margin-top: 8vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            gap: 3vw;
+
+            & .checkmarkIcon {
+              width: 4vw;
+              height: 4vw;
+            }
+
+            & .titleList {
+              font-size: 3.6vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            width: 11vw;
+            padding: 0.7vw 0vw;
+            border-radius: 1.25vw;
+            gap: 1.5vw;
+
+            & .pointListBadgeIndicator {
+              width: 3vw;
+              height: 3vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 3.4vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndText {
+        margin-top: 8vw;
+
+        & .tagBlock {
+          padding-left: 0.25vw;
+
+          & .tagText {
+            font-size: 3.6vw;
+            gap: 0.3vw;
+          }
+        }
+
+        & .textLaterBlock {
+          & .textLater {
+            font-size: 3.6vw;
+          }
+        }
+      }
+
+      & .buttonBlock {
+        margin-top: 3vw;
+        & .button {
+          padding: 2.5vw 0vw;
+          font-size: 3.6vw;
+          border-radius: 5vw;
+          gap: 2.5vw;
+
+          & .buttonIcon {
+            width: 3.75vw;
+            height: 3.75vw;
+          }
+        }
+      }
+    }
+  }
+}

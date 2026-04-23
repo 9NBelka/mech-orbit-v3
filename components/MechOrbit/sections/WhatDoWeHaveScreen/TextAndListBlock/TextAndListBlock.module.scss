@@ -1,0 +1,275 @@
+.textAndListMainBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5vw;
+}
+
+.textAndListBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5vw;
+
+  & .textBlock {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    & .textBlockTitle {
+      font-size: 1.35vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-smallBold);
+      line-height: var(--font-lineh-normal);
+      width: 80%;
+    }
+
+    & .textBlockDescription {
+      font-size: 1vw;
+      color: var(--color-light-gray-for-fly-block);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal-another);
+      margin-top: 1vw;
+      width: 88%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .textAndListBlock {
+    flex-direction: column;
+    width: 100%;
+    gap: 3vw;
+
+    & .textBlock {
+      width: 100%;
+
+      & .textBlockTitle {
+        font-size: 2.2vw;
+        width: 100%;
+      }
+
+      & .textBlockDescription {
+        font-size: 1.8vw;
+        margin-top: 2vw;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .textAndListBlock {
+    gap: 5vw;
+    margin-top: 5vw;
+
+    & .textBlock {
+      & .textBlockTitle {
+        font-size: 4.6vw;
+      }
+
+      & .textBlockDescription {
+        font-size: 3.6vw;
+        margin-top: 3vw;
+      }
+    }
+  }
+}
+
+.descriptionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25vw;
+
+  & .descriptionAndIconBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75vw;
+
+    & .description {
+      font-size: 1vw;
+      color: var(--color-light-gray);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal-another);
+    }
+
+    & .checkmarkIcon {
+      width: 1vw;
+      height: 1vw;
+      fill: var(--color-light-blue-for-icon);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .descriptionBlock {
+    max-width: 100%;
+    margin-top: 0vw;
+
+    & .descriptionAndIconBlock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5vw;
+
+      .description {
+        font-size: 2.2vw;
+      }
+
+      & .checkmarkIcon {
+        width: 2vw;
+        height: 2vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .descriptionBlock {
+    & .descriptionAndIconBlock {
+      gap: 4vw;
+
+      .description {
+        font-size: 4vw;
+        width: 85%;
+        margin-top: 1vw;
+      }
+
+      & .checkmarkIcon {
+        width: 4vw;
+        height: 4vw;
+      }
+    }
+  }
+}
+
+.blockBottomScreen {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.conclusionBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.1vw solid rgba(255, 255, 255, 0.1);
+  border-radius: 1vw;
+  padding: 1vw 3vw;
+  margin-top: 3.5vw;
+  gap: 1vw;
+
+  & .borderLineVertical {
+    width: 0.1vw;
+    height: 2vw;
+    border-radius: 2vw;
+    background: linear-gradient(
+      0deg,
+      rgba(14, 165, 233, 0),
+      rgba(26, 194, 240, 1),
+      rgba(14, 165, 233, 0)
+    );
+    position: relative;
+    overflow: visible;
+  }
+
+  & .conclusionText {
+    text-align: center;
+    font-size: 0.8vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-smallBold);
+    line-height: var(--font-lineh-normal-another);
+
+    & span {
+      opacity: 0.5;
+      font-weight: var(--font-weight-light);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .conclusionBlock {
+    width: 100%;
+    border-radius: 2vw;
+    padding: 3vw 3vw;
+    margin-top: 4vw;
+    gap: 3vw;
+
+    & .borderLineVertical {
+      width: 0.4vw;
+      height: 4vw;
+      border-radius: 5vw;
+    }
+
+    & .conclusionText {
+      width: 100%;
+      font-size: 1.8vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .conclusionBlock {
+    border-radius: 4vw;
+    padding: 5vw 5vw;
+    margin-top: 8vw;
+    gap: 5vw;
+
+    & .borderLineVertical {
+      width: 0.75vw;
+      height: 7vw;
+      border-radius: 5vw;
+    }
+
+    & .conclusionText {
+      text-align: left;
+      font-size: 3.6vw;
+    }
+  }
+}
+
+.blockWithTextBottomScreen {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vw;
+
+  & p {
+    width: 40%;
+    text-align: center;
+    font-size: 0.95vw;
+    color: rgba(148, 163, 184, 1);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal-another);
+  }
+}
+
+@media (max-width: 1024px) {
+  .blockWithTextBottomScreen {
+    margin-top: 3vw;
+
+    & p {
+      width: 100%;
+      font-size: 1.8vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .blockWithTextBottomScreen {
+    margin-top: 5vw;
+
+    & p {
+      font-size: 3.6vw;
+    }
+  }
+}

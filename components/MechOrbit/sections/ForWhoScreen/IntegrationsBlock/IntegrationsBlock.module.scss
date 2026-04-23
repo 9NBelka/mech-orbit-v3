@@ -1,0 +1,503 @@
+.textContentForTwoBlock {
+  display: flex;
+  flex-direction: column;
+
+  & .textContentForTwoBlockTitle {
+    font-size: 1.3vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-smallBold);
+    line-height: var(--font-lineh-normal);
+    margin-top: 2vw;
+  }
+
+  & .textContentForTwoBlockDescription {
+    font-size: 1vw;
+    color: var(--color-light-gray-for-fly-block);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+    margin-top: 0.5vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .textContentForTwoBlock {
+    & .textContentForTwoBlockTitle {
+      font-size: 2.4vw;
+      margin-top: 5vw;
+    }
+
+    & .textContentForTwoBlockDescription {
+      font-size: 1.8vw;
+      margin-top: 1vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .textContentForTwoBlock {
+    & .textContentForTwoBlockTitle {
+      font-size: 4.6vw;
+      margin-top: 8vw;
+    }
+
+    & .textContentForTwoBlockDescription {
+      font-size: 3.6vw;
+      margin-top: 1.5vw;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5vw;
+  gap: 0.6vw;
+
+  & .card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(24, 24, 24, 1);
+    border-radius: 0.75vw;
+    padding: 1.5vw 1.75vw;
+
+    & .headerCard {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & .title {
+        font-size: 1.1vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-smallBold);
+        line-height: var(--font-lineh-normal);
+      }
+
+      & .mainStatusBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2vw 0.5vw;
+        background: rgba(19, 40, 64, 0.35);
+        border: 0.01vw solid rgba(108, 240, 26, 0.27);
+        border-radius: 1vw;
+        gap: 0.25vw;
+
+        & .badgeIndicator {
+          width: 0.65vw;
+          height: 0.65vw;
+          border-radius: 50%;
+          fill: var(--color-green-text);
+          animation: pulse 2s infinite;
+        }
+
+        & .mainStatus {
+          font-size: 0.7vw;
+          color: var(--color-green-text);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-normal);
+        }
+      }
+    }
+
+    & .listBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      margin-top: 2vw;
+
+      & .pointListBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .pointListTextBlock {
+          display: flex;
+          flex-direction: column;
+
+          & .titleList {
+            font-size: 0.85vw;
+            color: var(--color-white);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-smallBold);
+            line-height: var(--font-lineh-normal);
+          }
+
+          & .descriptionList {
+            font-size: 0.75vw;
+            color: var(--color-light-gray-for-fly-block);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+
+        & .pointListStatusBlock {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.15vw 0.45vw;
+          background: rgba(45, 181, 3, 0.35);
+          border: 0.01vw solid rgba(45, 181, 3, 0.35);
+          border-radius: 1vw;
+          gap: 0.25vw;
+
+          &.classBlueStatus {
+            background: rgba(3, 87, 181, 0.35);
+            border: 0.01vw solid rgba(26, 194, 240, 0.27);
+
+            & .pointListBadgeIndicator {
+              fill: var(--color-light-blue-for-icon);
+            }
+
+            & .pointListMainStatus {
+              color: var(--color-light-light-blue);
+            }
+          }
+
+          &.classGreyStatus {
+            background: rgba(97, 145, 201, 0.35);
+            border: 0.01vw solid rgba(171, 236, 254, 0.27);
+
+            & .pointListBadgeIndicator {
+              fill: var(--color-light-light-green);
+            }
+
+            & .pointListMainStatus {
+              color: var(--color-light-light-green);
+            }
+          }
+
+          & .pointListBadgeIndicator {
+            width: 0.65vw;
+            height: 0.65vw;
+            border-radius: 50%;
+            fill: var(--color-green-text);
+          }
+
+          & .pointListMainStatus {
+            font-size: 0.7vw;
+            color: var(--color-white);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+      }
+    }
+
+    & .tagsAndButton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2vw;
+
+      & .tagBlocks {
+        display: flex;
+        flex-direction: row;
+      }
+
+      & .tagBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0.25vw;
+
+        &:first-child {
+          padding: 0;
+        }
+
+        & .tagText {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 0.65vw;
+          color: var(--color-light-gray-two);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-small);
+          padding-right: 0.25vw;
+        }
+
+        & .tagBadgeIndicator {
+          width: 0.45vw;
+          height: 0.45vw;
+          color: var(--color-light-gray-two);
+        }
+      }
+
+      & .button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: var(--color-gray-three);
+        padding: 0.4vw 0.75vw;
+        font-size: 0.65vw;
+        color: rgba(210, 212, 216, 1);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-lineh-small);
+        border-radius: 0.25vw;
+        cursor: pointer;
+        gap: 0.25vw;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+          background: rgba(26, 194, 240, 0.4);
+        }
+
+        & .buttonIcon {
+          width: 1vw;
+          height: 1vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    flex-wrap: wrap;
+    margin-top: 3vw;
+    gap: 2vw;
+
+    & .card {
+      width: 48%;
+      border-radius: 1vw;
+      padding: 3vw 3vw;
+
+      & .headerCard {
+        & .title {
+          font-size: 2.4vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 0.3vw 1vw;
+          border-radius: 3vw;
+          gap: 0.5vw;
+
+          & .badgeIndicator {
+            width: 1.4vw;
+            height: 1.4vw;
+          }
+
+          & .mainStatus {
+            font-size: 1.8vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 2vw;
+        margin-top: 2vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            & .titleList {
+              font-size: 1.8vw;
+            }
+
+            & .descriptionList {
+              font-size: 1.75vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            padding: 0.3vw 1vw;
+            border-radius: 3vw;
+            gap: 0.5vw;
+
+            & .pointListBadgeIndicator {
+              width: 1.4vw;
+              height: 1.4vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 1.7vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndButton {
+        margin-top: 4vw;
+
+        & .tagBlock {
+          padding-left: 0.5vw;
+
+          &:first-child {
+            padding: 0;
+          }
+
+          & .tagText {
+            font-size: 1.65vw;
+            padding-right: 0.5vw;
+          }
+
+          & .tagBadgeIndicator {
+            width: 1.2vw;
+            height: 1.2vw;
+          }
+        }
+
+        & .button {
+          padding: 1vw 1.75vw;
+          font-size: 1.7vw;
+          border-radius: 0.75vw;
+          gap: 0.5vw;
+
+          &:hover {
+            transform: scale(1);
+            background: var(--color-gray-three);
+          }
+
+          & .buttonIcon {
+            width: 2vw;
+            height: 2vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 5vw;
+    gap: 5vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    // Скрываем скроллбар визуально, но оставляем функционал
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    & .card {
+      flex: 0 0 80vw;
+      min-width: 80vw;
+      width: 80vw;
+      border-radius: 2vw;
+      padding: 5vw;
+
+      & .headerCard {
+        & .title {
+          font-size: 4.6vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 1vw 3vw;
+          border-radius: 4.5vw;
+          gap: 1vw;
+
+          & .badgeIndicator {
+            width: 2.75vw;
+            height: 2.75vw;
+          }
+
+          & .mainStatus {
+            font-size: 3.6vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 5vw;
+        margin-top: 8vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            & .titleList {
+              font-size: 4.2vw;
+            }
+
+            & .descriptionList {
+              font-size: 3.6vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            padding: 1vw 3vw;
+            border-radius: 4.5vw;
+            gap: 1vw;
+
+            & .pointListBadgeIndicator {
+              width: 2.75vw;
+              height: 2.75vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 3.3vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndButton {
+        margin-top: 8vw;
+
+        & .tagBlock {
+          padding-left: 1vw;
+
+          &:first-child {
+            padding: 0;
+          }
+
+          & .tagText {
+            font-size: 3vw;
+            padding-right: 1vw;
+          }
+
+          & .tagBadgeIndicator {
+            width: 2vw;
+            height: 2vw;
+          }
+        }
+
+        & .button {
+          padding: 2.5vw 3.5vw;
+          font-size: 3.4vw;
+          border-radius: 1.5vw;
+          gap: 1.5vw;
+
+          & .buttonIcon {
+            width: 4vw;
+            height: 4vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}

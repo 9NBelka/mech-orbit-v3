@@ -1,0 +1,90 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.75vw;
+}
+
+.navLink {
+  font-size: 0.75vw;
+  color: var(--color-light-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-light);
+  line-height: var(--font-lineh-small2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: var(--color-white);
+  }
+}
+
+.buttonInvest {
+  padding: 0;
+  border: 0;
+  padding: 0.5vw 1vw;
+  border-radius: 1.5vw;
+  font-size: 0.7vw;
+  color: var(--color-black);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small2);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0vw 0.25vw 0.2vw rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .navMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3vw;
+
+    .navLink {
+      font-size: 1.8vw;
+      color: var(--color-white);
+    }
+  }
+
+  .buttonInvestLink {
+    width: 100%;
+  }
+
+  .buttonInvest {
+    width: 100%;
+    padding: 1.5vw 1vw;
+    border-radius: 0.75vw;
+    font-size: 1.8vw;
+
+    &:hover {
+      box-shadow: 0 0vw 0vw 0vw rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navMobile {
+    gap: 6vw;
+
+    .navLink {
+      font-size: 3.6vw;
+    }
+  }
+
+  .buttonInvest {
+    padding: 2.75vw 1vw;
+    border-radius: 1vw;
+    font-size: 3.6vw;
+  }
+}

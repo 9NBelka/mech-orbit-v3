@@ -1,0 +1,574 @@
+.whyUs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #171717 0%, #0a0a0a 100%);
+  border-top: 0.1vw solid rgba(255, 255, 255, 0.05);
+  padding: 5vw 0;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .whyUs {
+    padding: 8vw 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .whyUs {
+    padding: 10vw 0;
+  }
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.neonCircle {
+  position: absolute;
+  border-radius: 50%;
+  animation: translateY 4s ease-in-out infinite;
+  z-index: 0;
+
+  &.bluePrint {
+    width: 22vw;
+    height: 22vw;
+    background: rgba(59, 130, 246, 0.05);
+    top: 8%;
+    right: 2%;
+    filter: blur(4vw);
+    z-index: 0;
+  }
+
+  &.bluePrintTwo {
+    width: 22vw;
+    height: 22vw;
+    background: rgba(59, 130, 246, 0.05);
+    bottom: 8%;
+    left: 2%;
+    filter: blur(4vw);
+    z-index: 0;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.titleScreen {
+  text-align: center;
+  font-size: 2.4vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  width: 50%;
+
+  & span {
+    color: var(--color-blue);
+  }
+}
+
+@media (max-width: 1024px) {
+  .titleScreen {
+    font-size: 4vw;
+    line-height: var(--font-lineh-small2);
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleScreen {
+    text-align: center;
+    font-size: 6vw;
+  }
+}
+
+.borderLine {
+  width: 65%;
+  height: 0.175vw;
+  border-radius: 2vw;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0),
+    rgba(14, 165, 233, 0.25),
+    rgba(192, 132, 252, 1),
+    rgba(14, 165, 233, 0.25),
+    rgba(14, 165, 233, 0)
+  );
+  position: relative;
+  overflow: visible;
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .borderLine {
+    width: 85%;
+    height: 0.5vw;
+    border-radius: 3vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .borderLine {
+    width: 100%;
+    height: 0.75vw;
+    border-radius: 5vw;
+    margin-top: 4vw;
+  }
+}
+
+.titleForDescription {
+  font-size: 1.15vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .titleForDescription {
+    font-size: 2.4vw;
+    margin-top: 4vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleForDescription {
+    font-size: 4vw;
+    margin-top: 6vw;
+  }
+}
+
+.textDescription {
+  width: 50%;
+  text-align: center;
+  font-size: 1vw;
+  color: var(--color-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 2.5vw;
+}
+
+@media (max-width: 1024px) {
+  .textDescription {
+    width: 100%;
+    font-size: 1.8vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .textDescription {
+    font-size: 3.6vw;
+    margin-top: 4vw;
+  }
+}
+
+.cardsInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 5vw;
+
+  & .cardInfo {
+    display: flex;
+    width: 31.5%;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.5);
+    border: 0.01vw solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75vw;
+    padding: 1.5vw 1.5vw;
+    margin-bottom: 0.75vw;
+    transition: all 0.2s ease;
+
+    &:hover {
+      &.classForColorBlue {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgb(59 130 246 / 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgb(59 130 246 / 0.2);
+      }
+      &.classForColorPurple {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(168, 85, 247, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(168, 85, 247, 0.2);
+      }
+      &.classForColorLightOrange {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(245, 158, 11, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(245, 158, 11, 0.2);
+      }
+      &.classForColorOrange {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(246, 152, 59, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(246, 152, 59, 0.2);
+      }
+      &.classForColorGreen {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(59, 246, 121, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(59, 246, 121, 0.2);
+      }
+      &.classForColorLightBlue {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(59, 234, 246, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(59, 234, 246, 0.2);
+      }
+      &.classForColorPink {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(246, 59, 234, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(246, 59, 234, 0.2);
+      }
+      &.classForColorYellow {
+        transform: translateY(-0.1vw);
+        border: 0.01vw solid rgba(212, 246, 59, 0.5);
+        box-shadow: 0px 0.2vw 0.4vw 0vw rgba(212, 246, 59, 0.2);
+      }
+    }
+
+    & .numberAndTitleBlock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5vw;
+
+      & .numberCardBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.01vw solid var(--color-blue);
+        width: 3vw;
+        height: 3vw;
+        border-radius: 0.5vw;
+
+        &.classForColorBlue {
+          border: 0.01vw solid var(--color-blue);
+          box-shadow: 0px 0px 1vw 0px rgba(59, 130, 246, 0.25);
+          background: rgba(59, 130, 246, 0.1);
+        }
+
+        &.classForColorPurple {
+          border: 0.01vw solid var(--color-purple-for-icon);
+          box-shadow: 0px 0px 1vw 0px rgba(137, 59, 246, 0.25);
+          background: rgba(168, 85, 247, 0.1);
+        }
+
+        &.classForColorLightOrange {
+          border: 0.01vw solid var(--color-orange-for-icon);
+          box-shadow: 0px 0px 1vw 0px rgba(246, 174, 59, 0.25);
+          background: rgba(245, 158, 11, 0.1);
+        }
+
+        &.classForColorOrange {
+          border: 0.01vw solid var(--color-orange-for-icon-two);
+          box-shadow: 0px 0px 1vw 0px rgba(246, 152, 59, 0.25);
+          background: rgba(246, 124, 59, 0.1);
+        }
+
+        &.classForColorGreen {
+          border: 0.01vw solid var(--color-light-green-for-icon);
+          box-shadow: 0px 0px 1vw 0px rgba(59, 246, 121, 0.25);
+          background: rgba(85, 247, 96, 0.1);
+        }
+
+        &.classForColorLightBlue {
+          border: 0.01vw solid var(--color-light-blue-for-icon-two);
+          box-shadow: 0px 0px 1vw 0px rgba(59, 234, 246, 0.25);
+          background: rgba(11, 202, 245, 0.1);
+        }
+
+        &.classForColorPink {
+          border: 0.01vw solid var(--color-pink-for-icon);
+          box-shadow: 0px 0px 1vw 0px rgba(246, 59, 234, 0.25);
+          background: rgba(243, 59, 246, 0.1);
+        }
+
+        &.classForColorYellow {
+          border: 0.01vw solid var(--color-yellow-for-icon);
+          box-shadow: 0px 0px 1vw 0px rgba(212, 246, 59, 0.25);
+          background: rgba(179, 247, 85, 0.1);
+        }
+
+        & .numberCardText {
+          font-size: 1.2vw;
+          color: var(--color-gray);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-bold);
+          line-height: var(--font-lineh-normal);
+
+          &.classForColorBlue {
+            color: var(--color-blue);
+          }
+
+          &.classForColorPurple {
+            color: var(--color-purple-for-icon);
+          }
+
+          &.classForColorLightOrange {
+            color: var(--color-orange-for-icon);
+          }
+
+          &.classForColorOrange {
+            color: var(--color-orange-for-icon-two);
+          }
+
+          &.classForColorGreen {
+            color: var(--color-light-green-for-icon);
+          }
+
+          &.classForColorLightBlue {
+            color: var(--color-light-blue-for-icon-two);
+          }
+
+          &.classForColorPink {
+            color: var(--color-pink-for-icon);
+          }
+
+          &.classForColorYellow {
+            color: var(--color-yellow-for-icon);
+          }
+        }
+      }
+
+      & .cardInfoTitle {
+        font-size: 0.95vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-lineh-small);
+      }
+    }
+
+    & .cardDescription {
+      font-size: 0.8vw;
+      color: var(--color-light-gray-for-fly-block);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal-another);
+      margin-top: 1.5vw;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardsInfo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vw;
+    width: 100%;
+    margin-top: 5vw;
+
+    & .cardInfo {
+      width: 100%;
+      border-radius: 2vw;
+      padding: 3vw 3vw;
+      margin-bottom: 0vw;
+
+      &:hover {
+        &.classForColorBlue {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorPurple {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorLightOrange {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorOrange {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorGreen {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorLightBlue {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorPink {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+        &.classForColorYellow {
+          transform: translateY(0vw);
+          border: 0.01vw solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0px 0vw 0vw 0vw rgb(59 130 246 / 0);
+        }
+      }
+
+      & .numberAndTitleBlock {
+        gap: 2vw;
+
+        & .numberCardBlock {
+          width: 7vw;
+          height: 7vw;
+          border-radius: 1vw;
+
+          & .numberCardText {
+            font-size: 2.6vw;
+          }
+        }
+
+        & .cardInfoTitle {
+          font-size: 2.4vw;
+        }
+      }
+
+      & .cardDescription {
+        font-size: 1.8vw;
+        margin-top: 1.5vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cardsInfo {
+    gap: 2.5vw;
+    margin-top: 5vw;
+
+    & .cardInfo {
+      border-radius: 4vw;
+      padding: 5vw;
+      margin-bottom: 0vw;
+
+      & .numberAndTitleBlock {
+        gap: 5vw;
+
+        & .numberCardBlock {
+          width: 12vw;
+          height: 12vw;
+          border-radius: 3vw;
+
+          & .numberCardText {
+            font-size: 4vw;
+          }
+        }
+
+        & .cardInfoTitle {
+          width: 70%;
+          font-size: 4.6vw;
+          line-height: var(--font-lineh-normal);
+        }
+      }
+
+      & .cardDescription {
+        font-size: 3.6vw;
+        margin-top: 3vw;
+      }
+    }
+  }
+}
+
+.blockBottomScreen {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.conclusionBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.1vw solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75vw;
+  padding: 1.2vw 1.5vw;
+  margin-top: 1.75vw;
+  gap: 1.5vw;
+
+  & .iconCheck {
+    width: 0.9vw;
+    height: 0.9vw;
+    color: var(--color-light-blue-for-icon);
+  }
+
+  & .conclusionText {
+    text-align: center;
+    font-size: 0.85vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-light);
+    line-height: var(--font-lineh-normal-another);
+
+    & span {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .conclusionBlock {
+    width: 100%;
+    border-radius: 2vw;
+    padding: 3vw 3vw;
+    margin-top: 5vw;
+    gap: 3vw;
+
+    & .iconCheck {
+      width: 3vw;
+      height: 3vw;
+    }
+
+    & .conclusionText {
+      width: 100%;
+      font-size: 1.8vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .conclusionBlock {
+    border-radius: 4vw;
+    padding: 5vw 5vw;
+    margin-top: 8vw;
+    gap: 3vw;
+
+    & .iconCheck {
+      display: none;
+    }
+
+    & .conclusionText {
+      font-size: 3.6vw;
+    }
+  }
+}

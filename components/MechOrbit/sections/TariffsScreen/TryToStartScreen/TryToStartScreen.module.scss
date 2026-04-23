@@ -1,0 +1,711 @@
+.tryToStartScreen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(10, 10, 10);
+  position: relative;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.neonCircle {
+  position: absolute;
+  border-radius: 50%;
+  animation: translateY 4s ease-in-out infinite;
+  z-index: 0;
+
+  &.bluePrint {
+    width: 22vw;
+    height: 22vw;
+    background: rgba(59, 130, 246, 0.05);
+    top: 15%;
+    left: 0%;
+    filter: blur(4vw);
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleScreen {
+  text-align: center;
+  font-size: 2.4vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  width: 50%;
+
+  & span {
+    color: var(--color-blue);
+  }
+}
+
+@media (max-width: 1024px) {
+  .titleScreen {
+    font-size: 4vw;
+    line-height: var(--font-lineh-small2);
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleScreen {
+    text-align: center;
+    font-size: 6vw;
+  }
+}
+
+.borderLine {
+  width: 65%;
+  height: 0.175vw;
+  border-radius: 2vw;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0),
+    rgba(14, 165, 233, 0.25),
+    rgba(192, 132, 252, 1),
+    rgba(14, 165, 233, 0.25),
+    rgba(14, 165, 233, 0)
+  );
+  position: relative;
+  overflow: visible;
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .borderLine {
+    width: 85%;
+    height: 0.5vw;
+    border-radius: 3vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .borderLine {
+    width: 100%;
+    height: 0.75vw;
+    border-radius: 5vw;
+    margin-top: 4vw;
+  }
+}
+
+.textDescription {
+  width: 50%;
+  text-align: center;
+  font-size: 1vw;
+  color: var(--color-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .textDescription {
+    width: 100%;
+    font-size: 1.8vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .textDescription {
+    font-size: 3.6vw;
+    margin-top: 4vw;
+  }
+}
+
+.cardAndInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  margin-top: 2vw;
+}
+
+@media (max-width: 1024px) {
+  .cardAndInfo {
+    gap: 5vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .cardAndInfo {
+    flex-direction: column;
+    gap: 6vw;
+    margin-top: 5vw;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.9vw;
+
+  & .card {
+    scroll-snap-align: start;
+    // width: 25%;
+    flex: 0 0 20vw; // фиксированная ширина карточки
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgb(26, 29, 34);
+    border-radius: 0.75vw;
+    padding: 1.5vw 1.75vw;
+    transition: 0.2s ease-in-out;
+    border: 0.01vw solid rgba(255, 255, 255, 0.1);
+
+    & .headerCard {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & .title {
+        font-size: 0.85vw;
+        color: var(--color-blue);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-smallStrong);
+        line-height: var(--font-lineh-normal);
+      }
+
+      & .mainStatusBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5vw 0.6vw;
+        background: rgba(24, 31, 43, 1);
+        border-radius: 1vw;
+        gap: 0.4vw;
+
+        & .badgeIndicator {
+          width: 0.8vw;
+          height: 0.8vw;
+          fill: rgba(179, 186, 197, 1);
+        }
+
+        & .mainStatus {
+          font-size: 0.7vw;
+          color: var(--color-white);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-normal);
+        }
+      }
+    }
+
+    & .blockPrice {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5vw;
+
+      & .textPrice {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        font-size: 1.4vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-lineh-small);
+        gap: 0.2vw;
+
+        & span {
+          font-size: 0.7vw;
+          color: var(--color-light-gray-for-fly-block);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-smallStrong);
+          line-height: var(--font-lineh-small);
+        }
+      }
+    }
+
+    & .listBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25vw;
+      margin-top: 2vw;
+
+      & .pointListBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .pointListTextBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5vw;
+
+          &.greyColor {
+            opacity: 0.2;
+          }
+
+          & .checkmarkIcon {
+            width: 1vw;
+            height: 1vw;
+            fill: var(--color-light-blue-for-icon);
+          }
+
+          & .titleList {
+            font-size: 0.9vw;
+            color: var(--color-white);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+
+        & .pointListStatusBlock {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.5vw;
+          padding: 0.15vw 0vw;
+          background: rgba(24, 31, 43, 1);
+          border-radius: 0.4vw;
+          gap: 0.25vw;
+
+          & .pointListBadgeIndicator {
+            width: 0.75vw;
+            height: 0.75vw;
+            border-radius: 50%;
+            fill: var(--color-light-gray-for-traffic);
+          }
+
+          & .pointListMainStatus {
+            font-size: 0.85vw;
+            color: var(--color-light-gray-for-traffic);
+            font-family: var(--font-Inter);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-lineh-normal);
+          }
+        }
+      }
+    }
+
+    & .tagsAndText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2vw;
+
+      & .tagBlocks {
+        display: flex;
+        flex-direction: row;
+      }
+
+      & .tagBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 0.25vw;
+
+        &:first-child {
+          padding: 0;
+        }
+
+        & .tagText {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 1vw;
+          color: var(--color-light-gray);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-small);
+          gap: 0.3vw;
+        }
+      }
+
+      & .textLaterBlock {
+        display: flex;
+
+        & .textLater {
+          font-size: 0.65vw;
+          color: var(--color-light-gray-for-fly-block);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-lineh-small);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    gap: 2vw;
+
+    & .card {
+      flex: 0 0 25vw;
+    }
+
+    & .card {
+      flex: 0 0 41vw; // фиксированная ширина карточки
+      border-radius: 1vw;
+      padding: 3vw 3vw;
+
+      & .headerCard {
+        & .title {
+          font-size: 2vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 0.75vw 1.5vw;
+          border-radius: 1vw;
+          gap: 1vw;
+
+          & .badgeIndicator {
+            width: 1.5vw;
+            height: 1.5vw;
+          }
+
+          & .mainStatus {
+            font-size: 1.6vw;
+          }
+        }
+      }
+
+      & .blockPrice {
+        margin-top: 2vw;
+
+        & .textPrice {
+          font-size: 2.8vw;
+          gap: 0.75vw;
+
+          & span {
+            font-size: 1.6vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 1vw;
+        margin-top: 3vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            gap: 1.5vw;
+
+            & .checkmarkIcon {
+              width: 2vw;
+              height: 2vw;
+            }
+
+            & .titleList {
+              font-size: 1.8vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            width: 5vw;
+            padding: 0.3vw 0vw;
+            border-radius: 0.75vw;
+            gap: 0.75vw;
+
+            & .pointListBadgeIndicator {
+              width: 1.5vw;
+              height: 1.5vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 1.8vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndText {
+        margin-top: 4vw;
+
+        & .tagBlock {
+          padding-left: 0.25vw;
+
+          & .tagText {
+            font-size: 2vw;
+            gap: 0.3vw;
+          }
+        }
+
+        & .textLaterBlock {
+          & .textLater {
+            font-size: 1.6vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    gap: 5vw;
+
+    & .card {
+      flex: 0 0 5vw;
+    }
+
+    & .card {
+      flex: 0 0 80vw;
+      border-radius: 2vw;
+      padding: 5vw;
+
+      & .headerCard {
+        & .title {
+          font-size: 4.6vw;
+        }
+
+        & .mainStatusBlock {
+          padding: 1.25vw 2.5vw;
+          border-radius: 1.5vw;
+          gap: 1.5vw;
+
+          & .badgeIndicator {
+            width: 3vw;
+            height: 3vw;
+          }
+
+          & .mainStatus {
+            font-size: 3.2vw;
+          }
+        }
+      }
+
+      & .blockPrice {
+        margin-top: 5vw;
+
+        & .textPrice {
+          font-size: 6vw;
+          gap: 0.75vw;
+
+          & span {
+            font-size: 3.6vw;
+          }
+        }
+      }
+
+      & .listBlock {
+        gap: 3vw;
+        margin-top: 8vw;
+
+        & .pointListBlock {
+          & .pointListTextBlock {
+            gap: 3vw;
+
+            & .checkmarkIcon {
+              width: 4vw;
+              height: 4vw;
+            }
+
+            & .titleList {
+              font-size: 3.6vw;
+            }
+          }
+
+          & .pointListStatusBlock {
+            width: 11vw;
+            padding: 0.7vw 0vw;
+            border-radius: 1.25vw;
+            gap: 1.5vw;
+
+            & .pointListBadgeIndicator {
+              width: 3vw;
+              height: 3vw;
+            }
+
+            & .pointListMainStatus {
+              font-size: 3.4vw;
+            }
+          }
+        }
+      }
+
+      & .tagsAndText {
+        margin-top: 8vw;
+
+        & .tagBlock {
+          padding-left: 0.25vw;
+
+          & .tagText {
+            font-size: 3.6vw;
+            gap: 0.3vw;
+          }
+        }
+
+        & .textLaterBlock {
+          & .textLater {
+            font-size: 3.6vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+
+  & .infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  & .infoPointBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw;
+
+    & .infoIcon {
+      width: 1vw;
+      height: 1vw;
+      fill: var(--color-light-blue-for-icon);
+    }
+
+    & .infoText {
+      font-size: 0.9vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal);
+    }
+  }
+
+  & .infoButton {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-blue);
+    padding: 1vw 0vw;
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+    border-radius: 0.3vw;
+    cursor: pointer;
+    gap: 0.5vw;
+    margin-top: 3vw;
+    transition: 0.3s ease-in-out;
+
+    &.infoButtonPhone {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0.5vw var(--color-blue);
+    }
+
+    & .buttonIcon {
+      width: 1vw;
+      height: 1vw;
+      fill: var(--color-white);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .infoBlock {
+    & .infoList {
+      gap: 2vw;
+    }
+
+    & .infoPointBlock {
+      gap: 1vw;
+
+      & .infoIcon {
+        width: 2.5vw;
+        height: 2.5vw;
+      }
+
+      & .infoText {
+        font-size: 1.8vw;
+      }
+    }
+
+    & .infoButton {
+      padding: 2vw 0vw;
+      font-size: 1.8vw;
+      border-radius: 0.5vw;
+      gap: 0.5vw;
+      margin-top: 3vw;
+
+      &:hover {
+        box-shadow: 0 0 0vw var(--color-blue);
+      }
+
+      & .buttonIcon {
+        width: 2.5vw;
+        height: 2.5vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .infoBlock {
+    & .infoList {
+      flex-direction: column-reverse;
+      gap: 4vw;
+    }
+
+    & .infoPointBlock {
+      gap: 3vw;
+
+      & .infoIcon {
+        width: 4vw;
+        height: 4vw;
+      }
+
+      & .infoText {
+        font-size: 3.6vw;
+      }
+    }
+
+    & .infoButton {
+      display: none;
+      padding: 4vw 0vw;
+      font-size: 3.6vw;
+      border-radius: 1vw;
+      gap: 1vw;
+      margin-top: 0vw;
+
+      &.infoButtonPhone {
+        display: flex;
+      }
+
+      & .buttonIcon {
+        width: 4vw;
+        height: 4vw;
+      }
+    }
+  }
+}

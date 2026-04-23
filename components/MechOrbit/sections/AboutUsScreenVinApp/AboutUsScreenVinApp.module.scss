@@ -1,0 +1,562 @@
+.aboutUs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0a0a 0%, #171717 100%);
+  padding: 5vw 0;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .aboutUs {
+    padding: 8vw 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutUs {
+    padding: 10vw 0;
+  }
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.neonCircle {
+  position: absolute;
+  border-radius: 50%;
+  animation: translateY 4s ease-in-out infinite;
+  z-index: 0;
+
+  &.bluePrint {
+    width: 22vw;
+    height: 22vw;
+    background: rgba(59, 130, 246, 0.05);
+    top: 0%;
+    right: 0%;
+    filter: blur(4vw);
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .tagBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(38, 29, 46, 1);
+    border: 0.01vw solid rgba(77, 45, 106, 1);
+    padding: 0.5vw 0.75vw;
+    border-radius: 2vw;
+    gap: 0.25vw;
+
+    & .badgeIndicator {
+      width: 0.55vw;
+      height: 0.55vw;
+      border-radius: 50%;
+      fill: var(--color-pink);
+      animation: pulse 2s infinite;
+    }
+
+    & p {
+      font-size: 0.6vw;
+      color: var(--color-pink);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--font-lineh-small);
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 1024px) {
+  .textContent {
+    & .tagBlock {
+      padding: 1vw 1.75vw;
+      border-radius: 3vw;
+      gap: 1vw;
+
+      & .badgeIndicator {
+        width: 1.75vw;
+        height: 1.75vw;
+      }
+
+      & p {
+        font-size: 1.55vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .textContent {
+    & .tagBlock {
+      padding: 1.8vw 3vw;
+      border-radius: 5vw;
+
+      & .badgeIndicator {
+        width: 3vw;
+        height: 3vw;
+      }
+
+      & p {
+        font-size: 2.6vw;
+      }
+    }
+  }
+}
+
+.titleScreen {
+  text-align: center;
+  font-size: 2.4vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  margin-top: 0.75vw;
+  width: 50%;
+
+  & span {
+    color: var(--color-blue);
+  }
+}
+
+@media (max-width: 1024px) {
+  .titleScreen {
+    font-size: 4vw;
+    margin-top: 3vw;
+    line-height: var(--font-lineh-small2);
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleScreen {
+    text-align: center;
+    font-size: 6vw;
+    margin-top: 3vw;
+  }
+}
+
+.borderLine {
+  width: 65%;
+  height: 0.175vw;
+  border-radius: 2vw;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0),
+    rgba(14, 165, 233, 0.25),
+    rgba(192, 132, 252, 1),
+    rgba(14, 165, 233, 0.25),
+    rgba(14, 165, 233, 0)
+  );
+  position: relative;
+  overflow: visible;
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .borderLine {
+    width: 85%;
+    height: 0.5vw;
+    border-radius: 3vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .borderLine {
+    width: 100%;
+    height: 0.75vw;
+    border-radius: 5vw;
+    margin-top: 4vw;
+  }
+}
+
+.textDescription {
+  width: 50%;
+  text-align: center;
+  font-size: 1vw;
+  color: var(--color-gray);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .textDescription {
+    width: 100%;
+    font-size: 1.8vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .textDescription {
+    font-size: 3.6vw;
+    margin-top: 4vw;
+  }
+}
+
+.imageAndIconBlocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8vw;
+  margin-top: 3vw;
+
+  & .blockImageDashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding-bottom: 0;
+
+    & img {
+      // background: rgba(255, 255, 255, 0.05);
+      border: 0.01vw solid rgba(255, 255, 255, 0.05);
+      // padding: 0.4vw;
+      // border-radius: 1vw;
+      width: 16vw;
+      border-radius: 1vw;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageAndIconBlocks {
+    flex-direction: column-reverse;
+    gap: 4vw;
+    margin-top: 4vw;
+
+    & .blockImageDashboard {
+      width: 85%;
+
+      & img {
+        width: 40vw;
+        // padding: 1vw;
+        border-radius: 2vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .imageAndIconBlocks {
+    gap: 8vw;
+    margin-top: 4vw;
+
+    & .blockImageDashboard {
+      width: 100%;
+
+      & img {
+        // padding: 3vw 10vw;
+        width: 80vw;
+        border-radius: 6vw;
+      }
+    }
+  }
+}
+
+.iconsBlocks {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+
+  & .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1vw;
+
+    & .iconContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3vw;
+      height: 3vw;
+      border-radius: 0.5vw;
+      background-color: rgba(56, 77, 109, 0.3);
+      transition: all 0.3s ease;
+
+      &.iconContainerPurple {
+        background-color: rgba(249, 115, 22, 0.1);
+      }
+
+      &.iconContainerLightBlue {
+        background-color: rgba(239, 68, 68, 0.1);
+      }
+
+      &.iconContainerGreen {
+        background-color: rgba(85, 247, 96, 0.1);
+      }
+
+      & .cardIcon {
+        display: flex;
+        width: 1.5vw;
+        height: 1.5vw;
+        color: var(--color-red-for-icon);
+        color: var(--color-light-blue-for-icon-two);
+        transition: all 0.3s ease;
+
+        &.colorPurple {
+          color: var(--color-orange-for-icon-two);
+        }
+
+        &.colorLightBlue {
+          color: #f15757;
+        }
+
+        &.colorGreen {
+          color: var(--color-light-green-for-icon);
+        }
+      }
+    }
+
+    & .cardTitleAndDescription {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+
+      & .cardTitle {
+        font-size: 0.95vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-lineh-small);
+        margin-top: 0.2vw;
+      }
+
+      & .cardDescription {
+        font-size: 0.75vw;
+        color: var(--color-gray);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-lineh-normal);
+        margin-top: 0.6vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .iconsBlocks {
+    width: 100%;
+    gap: 5vw;
+
+    & .card {
+      gap: 3vw;
+
+      & .iconContainer {
+        width: 8vw;
+        height: 8vw;
+        border-radius: 1vw;
+
+        & .cardIcon {
+          width: 4vw;
+          height: 4vw;
+        }
+      }
+
+      & .cardTitleAndDescription {
+        width: 90%;
+
+        & .cardTitle {
+          font-size: 2.3vw;
+          margin-top: 0.5vw;
+        }
+
+        & .cardDescription {
+          font-size: 1.8vw;
+          margin-top: 1vw;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .iconsBlocks {
+    gap: 8vw;
+
+    & .card {
+      gap: 4vw;
+
+      & .iconContainer {
+        width: 12vw;
+        height: 12vw;
+        border-radius: 3vw;
+
+        & .cardIcon {
+          width: 6vw;
+          height: 6vw;
+        }
+      }
+
+      & .cardTitleAndDescription {
+        width: 82%;
+        & .cardTitle {
+          font-size: 4.6vw;
+          margin-top: 0.5vw;
+        }
+
+        & .cardDescription {
+          font-size: 3.6vw;
+          margin-top: 1vw;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.7vw;
+  margin-top: 3vw;
+
+  & a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  & .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0;
+    border-radius: 0.35vw;
+    padding: 0.65vw 1.75vw;
+    background: var(--color-blue);
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-smallBold);
+    line-height: var(--font-lineh-normal);
+    cursor: pointer;
+    gap: 0.3vw;
+    box-shadow: 0 0.1vw 0.25vw 0.15vw rgba(59, 130, 246, 0.2);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgb(37 99 235);
+      transform: scale(1.03);
+    }
+
+    &.buttonTwo {
+      padding: 0.65vw 1vw;
+      border: 0.1vw solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(22, 22, 22, 1);
+      box-shadow: none;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 0.1vw solid rgba(255, 255, 255, 0.2);
+        transform: scale(1);
+      }
+    }
+
+    & .buttonIcon {
+      width: 0.85vw;
+      height: 0.85vw;
+      fill: var(--color-white);
+    }
+
+    & .buttonIconTwo {
+      width: 1.2vw;
+      height: 1.2vw;
+      fill: var(--color-white);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .buttons {
+    gap: 3vw;
+    margin-top: 5vw;
+
+    & .button {
+      border-radius: 1vw;
+      padding: 1.5vw 5vw;
+      font-size: 1.8vw;
+      gap: 1vw;
+
+      &.buttonTwo {
+        padding: 1.5vw 3vw;
+      }
+
+      & .buttonIcon {
+        width: 2vw;
+        height: 2vw;
+      }
+
+      & .buttonIconTwo {
+        width: 2.2vw;
+        height: 2.2vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 5vw;
+    margin-top: 8vw;
+
+    & .button {
+      justify-content: center;
+      width: 100%;
+      border-radius: 2vw;
+      padding: 4vw 5vw;
+      font-size: 3.6vw;
+      gap: 2vw;
+
+      &.buttonTwo {
+        padding: 4vw 5vw;
+      }
+
+      & .buttonIcon {
+        width: 3vw;
+        height: 3vw;
+      }
+
+      & .buttonIconTwo {
+        width: 5vw;
+        height: 5vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,790 @@
+{
+  "nav": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "calculator": "Calculator",
+    "integrations": "Integrations",
+    "pricing": "Pricing",
+    "contacts": "Contacts"
+  },
+  "header": {
+    "loginButton": "Login / Register"
+  },
+  "hero": {
+    "badge": "OS for a profitable auto service",
+    "headline": "MECH Orbit: Digital OS for a Profitable Auto Repair Business",
+    "headlineTwo": "Transparency and profitability of car service",
+    "descriptionTitle": "MECH connects the customer, mechanic, and owner into a single auto service management system.",
+    "subDescription": "One ecosystem. Full control. Predictable results.",
+    "button": "Get started right now — it's free!",
+    "list": [
+      {
+        "titleBold": "Customer",
+        "title": "trust, transparency, job approval from a smartphone"
+      },
+      {
+        "titleBold": "Mechanic",
+        "title": "clear tasks, work tracking, fair pay"
+      },
+      {
+        "titleBold": "Owner",
+        "title": "process control, real analytics, profit in numbers"
+      }
+    ]
+  },
+  "aboutUs": {
+    "tag": "owner, manager, supervisor",
+    "title": "management and accounting for auto services",
+    "description": "Automatic customer registration, parts selection, supplier integrations — parts are ordered for the customer's vehicle, not stocked in advance",
+    "connectButton": "Connect",
+    "learnMoreButton": "Learn more",
+    "cards": [
+      {
+        "title": "Auto Service Control",
+        "description": "Service bay planning, AI idle-time control, and confirmation of completed work by the customer via smartphone."
+      },
+      {
+        "title": "Finance & Analytics",
+        "description": "One-click profitability analytics and integrations with payments and suppliers without manual accounting."
+      },
+      {
+        "title": "Parts & Inventory",
+        "description": "Parts catalogs, location-based storage, automatic markup, and real-time stock control."
+      }
+    ]
+  },
+  "aboutUsBookvin": {
+    "title": "car owner mobile app",
+    "description": "We created Bookvin based on the wishes of car owners. At its core are manufacturer service regulations and the experience of servicing thousands of vehicles.",
+    "learnMoreButton": "Learn more",
+    "cards": [
+      {
+        "title": "Electronic Service Book",
+        "description": "An indispensable assistant. A complete service history always at hand. Increases the residual value of the car when selling."
+      },
+      {
+        "title": "Manufacturer Service Schedule",
+        "description": "Forget the guesswork. The app clearly tells you when to replace the timing belt, fluids, and spark plugs specifically for your car model."
+      },
+      {
+        "title": "Expense Control",
+        "description": "Store receipts with a simple photo. Understand the real cost of ownership per kilometer driven."
+      },
+      {
+        "title": "Breakdown Prevention",
+        "description": "By analyzing data from thousands of similar vehicles, the system warns you about common weak points of your model before they become a problem."
+      }
+    ]
+  },
+  "aboutUsVinapp": {
+    "title": "Mobile App for Auto Mechanics",
+    "description": "All data from the app is instantly synced with CRMmech",
+    "learnMoreButton": "Learn more",
+    "cards": [
+      {
+        "title": "Vehicle Photo Documentation",
+        "description": "Quick photos of vehicle damage and condition directly from a mobile device"
+      },
+      {
+        "title": "Mobile Diagnostics",
+        "description": "Perform diagnostics and record results directly from your phone"
+      },
+      {
+        "title": "Work Management",
+        "description": "Control work progress and update task statuses"
+      },
+      {
+        "title": "Spare Parts Availability",
+        "description": "Update the status of ordered spare parts for each vehicle"
+      }
+    ]
+  },
+  "whyUs": {
+    "headline": "Transparency",
+    "headlineSpan": "of all actions",
+    "subTitle": "How MECH Orbit Automates Auto Repair Shop Operations",
+    "description": "All under Orbit control. The owner sees the big picture, the manager controls the process, and technicians simply do their job.",
+    "conclusionSpan": "One process",
+    "conclusionText": "from diagnostics to payment — everything under control",
+    "items": [
+      {
+        "title": "Vehicle Intake",
+        "description": "Condition assessment, photos, customer complaints, mileage",
+        "classForColor": "classForColorBlue"
+      },
+      {
+        "title": "Diagnostics",
+        "description": "Checklist, spare parts, labor intensity, preliminary estimate",
+        "classForColor": "classForColorPurple"
+      },
+      {
+        "title": "Commercial Offer",
+        "description": "Final estimate including labor and spare parts",
+        "classForColor": "classForColorLightOrange"
+      },
+      {
+        "title": "Automatic Approval",
+        "description": "The customer receives photos, a list of works, and an *Approve* button",
+        "classForColor": "classForColorOrange"
+      },
+      {
+        "title": "Spare Parts Ordering",
+        "description": "Integration with suppliers, margin control",
+        "classForColor": "classForColorGreen"
+      },
+      {
+        "title": "Execution Control",
+        "description": "Actual labor hours, downtime, work progress per vehicle",
+        "classForColor": "classForColorLightBlue"
+      },
+      {
+        "title": "Photo / Video Documentation",
+        "description": "Proof for the customer and protection against disputes",
+        "classForColor": "classForColorPink"
+      },
+      {
+        "title": "Payment and Vehicle Handover",
+        "description": "Job closure and recommendations for the future",
+        "classForColor": "classForColorYellow"
+      }
+    ]
+  },
+  "whatDoWeHave": {
+    "headlineSpan": "One Unified Ecosystem:",
+    "headline": "From Cameras to Mobile App",
+    "description": "We don't sell separate apps. MECH Orbit is a single operating system that already includes orders, inventory, payroll, analytics, AI-powered video, and mobile apps.",
+    "cards": [
+      {
+        "title": "Core",
+        "description": "A single core for the owner: customers, orders, cash desk, payroll, inventory.",
+        "classForColor": "classForColorBlue",
+        "tagCardText": "Module"
+      },
+      {
+        "title": "Vision",
+        "description": "Cameras monitor vehicle entries, downtime, and the actual cost of a labor hour.",
+        "classForColor": "classForColorOrange",
+        "tagCardText": "Module"
+      },
+      {
+        "title": "Apps — iOS/Android",
+        "description": "Mobile apps for technicians and customers. Work without a computer.",
+        "classForColor": "classForColorGreen",
+        "tagCardText": "Module"
+      },
+      {
+        "title": "Insights — analytics",
+        "description": "Profit, downtime, KPIs. An \"owner-ready\" report in two clicks.",
+        "classForColor": "classForColorLightBlue",
+        "tagCardText": "Module"
+      },
+      {
+        "title": "Link",
+        "description": "Suppliers, payments, cameras, API. An open platform.",
+        "classForColor": "classForColorPink",
+        "tagCardText": "Module"
+      },
+      {
+        "title": "AI mechanic",
+        "description": "An intelligent mechanic — diagnostics and failure prediction, maintenance and repair recommendations.",
+        "classForColor": "classForColorYellow",
+        "tagCardText": "Module"
+      }
+    ],
+    "textAndList": {
+      "title": "Artificial intelligence sees what the owner does not.",
+      "description": "The Vision system connects to cameras in service bays and automatically records downtime, workload, and job execution time for each vehicle.",
+      "list": [
+        "Understands when a vehicle is idle",
+        "Sees how much time each type of work actually takes",
+        "Detects standard violations and suspicious situations",
+        "Provides real data for discussions with technicians, not emotions."
+      ],
+      "conclusionText": "No need to control people —",
+      "conclusionSpan": "the system controls the process.",
+      "bottomText": "Want to know how much it costs to implement video AI specifically for your service station? Below is a camera-based calculation."
+    }
+  },
+  "aiMonitoring": {
+    "headline": "Calculate the Cost of Implementing",
+    "headlineSpan": "AI Video Control",
+    "recommendationLabel": "Main recommendation:",
+    "recommendationText": "one camera in front of the car for each bay, plus one overview camera for the entire room. This way, the system can see the license plate, movement, and idle time.",
+    "installTitle": "How to correctly install cameras for AI monitoring",
+    "warrantyLabel": "All equipment",
+    "warrantyText": "is supplied with a manufacturer warranty for 24 months.",
+    "consultationButton": "Consultation",
+    "list": [
+      "The camera must be installed in front of the car to clearly see the license plate.",
+      "The distance from the car should be at least 1.5 meters.",
+      "The installation height should be approximately 2 meters from the floor.",
+      "The more directly the camera is aimed at the license plate, the better the data quality for AI analysis."
+    ],
+    "calculator": {
+      "title": "Investments in your car service",
+      "qtyLabel": "Qty",
+      "consultationButton": "Consultation",
+      "invoiceButton": "Invoice",
+      "payButton": "Pay",
+      "bottomNote": "general cameras — for monitoring and territory overview, without license plate recognition",
+      "rows": [
+        {
+          "name": "Rooms",
+          "key": "rooms"
+        },
+        {
+          "name": "Bays",
+          "key": "posts"
+        },
+        {
+          "name": "Entry",
+          "key": "entry"
+        },
+        {
+          "name": "Parking",
+          "key": "parking"
+        },
+        {
+          "name": "Other",
+          "key": "other"
+        }
+      ],
+      "options": [
+        {
+          "key": "5mp",
+          "label": "5 MP, Wi-Fi",
+          "price": 2450
+        },
+        {
+          "key": "8mp",
+          "label": "8 MP, Wi-Fi",
+          "price": 4850
+        },
+        {
+          "key": "12mp",
+          "label": "12 MP, LAN",
+          "price": 4950
+        },
+        {
+          "key": "install",
+          "label": "Installation",
+          "price": 1000
+        }
+      ],
+      "invoiceModal": {
+        "title": "Enter details to generate the invoice",
+        "companyNamePlaceholder": "Company name",
+        "ipnPlaceholder": "IPN / EDRPOU",
+        "addressPlaceholder": "Address",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email format",
+        "phoneRequired": "Phone is required",
+        "phoneInvalid": "The number must contain at least 9 digits",
+        "notSpecified": "Not specified",
+        "successAlert": "Invoice successfully sent!",
+        "errorAlert": "Sending error. Please try again.",
+        "sendButton": "Send invoice to email",
+        "sendingButton": "Sending...",
+        "payCardButton": "Pay by card",
+        "payCardAlert": "Redirecting to card payment..."
+      }
+    }
+  },
+  "forWho": {
+    "tag": "The Big Vision",
+    "headlineSpan": "Solutions for Any Business:",
+    "headline": "From Small Auto Shops to Large Networks",
+    "description": "MECH is suitable for both small service centers and large networks. Thanks to the training system built into the MECH product, starting work is easy and clear.",
+    "cards": [
+      {
+        "title": "Independent service stations",
+        "description": "Increase profit, eliminate chaos, and free yourself from the owner's operational burden.",
+        "classForColor": "classForColorBlue"
+      },
+      {
+        "title": "Networks",
+        "description": "Unified standards, processes, analytics, and payroll calculation models across all locations.",
+        "classForColor": "classForColorPurple"
+      },
+      {
+        "title": "New locations",
+        "description": "Launch using the Orbit model: immediately with the system, not with chaos in chats and spreadsheets.",
+        "classForColor": "classForColorLightOrange"
+      }
+    ],
+    "integrations": {
+      "title": "Integrations",
+      "description": "Suppliers, payments, cameras — connection without problems.",
+      "cards": [
+        {
+          "title": "Suppliers",
+          "mainStatus": "Link",
+          "tags": [
+            "API",
+            "OAuth",
+            "Webhook"
+          ],
+          "buttonText": "Registration",
+          "linkToButton": "https://mech.partners/ua",
+          "list": [
+            {
+              "pointTitle": "Inter Cars",
+              "pointDescription": "Catalog, prices, stock",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "BusMarket",
+              "pointDescription": "API, orders, car arrival",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "AutoNova-D",
+              "pointDescription": "Prices/stock, connection",
+              "pointStatus": "BETA",
+              "pointStatusClass": "classBlueStatus"
+            },
+            {
+              "pointTitle": "UTR",
+              "pointDescription": "Agreed",
+              "pointStatus": "PLANNED",
+              "pointStatusClass": "classGreyStatus"
+            },
+            {
+              "pointTitle": "AD Ukraine",
+              "pointDescription": "Catalogs",
+              "pointStatus": "PLANNED",
+              "pointStatusClass": "classGreyStatus"
+            }
+          ]
+        },
+        {
+          "title": "Payments",
+          "mainStatus": "Link",
+          "tags": [
+            "API",
+            "OAuth",
+            "Webhook"
+          ],
+          "list": [
+            {
+              "pointTitle": "Fondy",
+              "pointDescription": "Catalog, prices, stock",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "LiqPay",
+              "pointDescription": "API, orders, car arrival",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "WayForPay",
+              "pointDescription": "Prices/stock, connection",
+              "pointStatus": "BETA",
+              "pointStatusClass": "classBlueStatus"
+            },
+            {
+              "pointTitle": "Stripr",
+              "pointDescription": "Agreed",
+              "pointStatus": "PLANNED",
+              "pointStatusClass": "classGreyStatus"
+            }
+          ]
+        },
+        {
+          "title": "Cameras",
+          "mainStatus": "Link",
+          "tags": [
+            "API",
+            "OAuth",
+            "Webhook"
+          ],
+          "list": [
+            {
+              "pointTitle": "RTSP/ONVIF",
+              "pointDescription": "Compatibility with most cameras",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "ANPR/LPR",
+              "pointDescription": "Number plate recognition",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "Norm-hour timer",
+              "pointDescription": "Actual cost of a norm-hour",
+              "pointStatus": "LIVE"
+            }
+          ]
+        },
+        {
+          "title": "API",
+          "mainStatus": "Link",
+          "tags": [
+            "API",
+            "OAuth",
+            "Webhook"
+          ],
+          "list": [
+            {
+              "pointTitle": "EDRTZ database",
+              "pointDescription": "Unified State Register of Vehicles.",
+              "pointStatus": "LIVE"
+            },
+            {
+              "pointTitle": "IP telephony",
+              "pointDescription": "Call recording linked to the client",
+              "pointStatus": "BETA",
+              "pointStatusClass": "classBlueStatus"
+            },
+            {
+              "pointTitle": "Chat with client",
+              "pointDescription": "Messaging from all messengers",
+              "pointStatus": "BETA",
+              "pointStatusClass": "classBlueStatus"
+            },
+            {
+              "pointTitle": "Vchasno. Cash register",
+              "pointDescription": "Using PRRO",
+              "pointStatus": "BETA",
+              "pointStatusClass": "classBlueStatus"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "tariffs": {
+    "screen": {
+      "title": "Tariffs",
+      "description": "Transparent pricing with no hidden fees. Choose a plan that fits your business size. All tariffs include full CRM functionality, mobile apps, and AI video control. Free 14-day CRM trial for auto repair shops (no credit card required)",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "discount": "20% discount"
+    },
+    "tryToStart": {
+      "title": "Try",
+      "titleSpan": "Start",
+      "titleEnd": "for free",
+      "description": "Free trial: 14 days, no card required.",
+      "daysLabel": "14 days",
+      "comingSoon": "soon",
+      "mainStatus": "1 service station",
+      "infoList": [
+        "No card binding or automatic charges",
+        "Full functionality for full operation",
+        "Personal consultation for setup",
+        "Access to AI analytics and all key modules."
+      ],
+      "tryButton": "🚀 Try 14 days for 0 UAH",
+      "loginButton": "Login"
+    },
+    "tariffs": [
+      {
+        "title": "Start",
+        "mainStatus": "1 LOCATION",
+        "price": 990,
+        "buttonText": "Choose Start",
+        "perMonth": "/mo",
+        "perMonthLocation": "/mo per location",
+        "comingSoon": "soon",
+        "list": [
+          {
+            "pointTitle": "AI Video",
+            "greyColor": true
+          },
+          {
+            "pointTitle": "CRM / Accounting / Warehouses",
+            "pointStatus": "2",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Integration – Suppliers",
+            "pointStatus": "3",
+            "iconType": "puzzle"
+          },
+          {
+            "pointTitle": "Mechanic App",
+            "pointStatus": "2",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Client App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Analytics"
+          },
+          {
+            "pointTitle": "WEB Extension",
+            "greyColor": true
+          }
+        ]
+      },
+      {
+        "title": "Profi",
+        "mainStatus": "4 – 8 locations",
+        "price": 4390,
+        "buttonText": "Choose Profi",
+        "perMonth": "/mo",
+        "perMonthLocation": "/mo per location",
+        "comingSoon": "soon",
+        "list": [
+          {
+            "pointTitle": "AI Video",
+            "pointStatus": "10",
+            "iconType": "camera"
+          },
+          {
+            "pointTitle": "CRM / Accounting / Warehouses",
+            "pointStatus": "8",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Integration – Suppliers",
+            "pointStatus": "20",
+            "iconType": "puzzle"
+          },
+          {
+            "pointTitle": "Mechanic App",
+            "pointStatus": "20",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Client App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Analytics"
+          },
+          {
+            "pointTitle": "WEB Extension"
+          }
+        ]
+      },
+      {
+        "title": "Full",
+        "mainStatus": "1 – 3 locations",
+        "price": 2990,
+        "buttonText": "Choose Full",
+        "perMonth": "/mo",
+        "perMonthLocation": "/mo per location",
+        "comingSoon": "soon",
+        "list": [
+          {
+            "pointTitle": "AI Video",
+            "pointStatus": "4",
+            "iconType": "camera"
+          },
+          {
+            "pointTitle": "CRM / Accounting / Warehouses",
+            "pointStatus": "4",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Integration – Suppliers",
+            "pointStatus": "10",
+            "iconType": "puzzle"
+          },
+          {
+            "pointTitle": "Mechanic App",
+            "pointStatus": "6",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Client App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Analytics"
+          },
+          {
+            "pointTitle": "WEB Extension"
+          }
+        ]
+      },
+      {
+        "title": "Maximal",
+        "mainStatus": "9+ locations",
+        "price": 5890,
+        "buttonText": "Choose Maximal",
+        "perMonth": "/mo",
+        "perMonthLocation": "/mo per location",
+        "comingSoon": "soon",
+        "list": [
+          {
+            "pointTitle": "AI Video",
+            "pointStatus": "∞",
+            "iconType": "camera"
+          },
+          {
+            "pointTitle": "CRM / Accounting / Warehouses",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Integration – Suppliers",
+            "pointStatus": "∞",
+            "iconType": "puzzle"
+          },
+          {
+            "pointTitle": "Mechanic App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Client App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Analytics"
+          },
+          {
+            "pointTitle": "WEB Extension"
+          }
+        ]
+      },
+      {
+        "title": "Network",
+        "mainStatus": "9+ locations",
+        "price": 5290,
+        "buttonText": "Choose Network",
+        "perMonth": "/mo",
+        "perMonthLocation": "/mo per location",
+        "comingSoon": "soon",
+        "list": [
+          {
+            "pointTitle": "AI Video",
+            "pointStatus": "∞",
+            "iconType": "camera"
+          },
+          {
+            "pointTitle": "CRM / Accounting / Warehouses",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Integration – Suppliers",
+            "pointStatus": "∞",
+            "iconType": "puzzle"
+          },
+          {
+            "pointTitle": "Mechanic App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Client App",
+            "pointStatus": "∞",
+            "iconType": "person"
+          },
+          {
+            "pointTitle": "Analytics",
+            "pointStatus": "BETA"
+          },
+          {
+            "pointTitle": "WEB Extension"
+          }
+        ]
+      }
+    ]
+  },
+    "faq": {
+    "tag": "FAQ",
+    "headline": "Frequently Asked",
+    "headlineSpan": "Questions",
+    "description": "We have already heard these questions from service station owners, so we answer them before you even call.",
+    "faqs": [
+      {
+        "question": "Can I try the system for free?",
+        "answer": "Yes, we provide a 14-day free trial of the software. This is a key part of our \"Trial Journey\", where you can evaluate all the benefits of the system on your own equipment or using our TestCam before making a purchase decision."
+      },
+      {
+        "question": "Can I connect my existing cameras?",
+        "answer": "Yes, if your cameras support the standard video streaming protocol (RTSP). The free trial period is ideal for quickly and safely testing this. However, it is important to understand that the quality and stability of the entire system directly depend on the equipment. We recommend using cameras from Reolink."
+      },
+      {
+        "question": "Why do you recommend purchasing new, certified equipment then?",
+        "answer": "Because our goal is to provide you with clear data and guaranteed results, not just to \"somehow connect\" the system. Here are 4 key reasons:",
+        "list": {
+          "pointOne": "Proper positioning: Your existing cameras are most likely installed for general surveillance. MECHorbit analytics require a precise angle for each workstation. Relocating old cameras results in the same installation costs, but without quality guarantees.",
+          "pointTwo": "Technical limitations: Most legacy systems (especially DVRs) are designed as a \"black box\" and block stable video streaming to third-party applications like ours. This makes integration unreliable.",
+          "pointThree": "Analytics accuracy: The modern cameras we offer ensure high accuracy in license plate recognition (LPR) and event detection, even in challenging conditions (nighttime, angled views). This is critical for proper system performance.",
+          "pointFour": "Reliability guarantee: We have tested dozens of models and guarantee flawless system performance only with the equipment we recommend and certify."
+        }
+      },
+      {
+        "question": "Okay, cameras need to be purchased. Are they included in the subscription?",
+        "answer": "You purchase the equipment (cameras) once — it becomes your property. The monthly fee is a subscription for the software (SaaS) that \"brings these cameras to life\", providing analytics, CRM, and all other ecosystem features. This approach is more cost-effective for you in the long term."
+      },
+      {
+        "question": "How difficult is it to start using the system?",
+        "answer": "For the \"Trial Journey\", everything is simple. For the \"Full Setup\", basic configuration and training take a few days. You will see the first real results and analytics within a week."
+      },
+      {
+        "question": "I already have a CRM. How is MECHorbit better?",
+        "answer": "Standard CRMs are just accounting systems. MECHorbit is a unified organism that connects the real world (cameras) with the digital one (CRM, apps). We automate processes other systems don't see: tracking real working time, eliminating the human factor, and speeding up client approvals. It's a shift from basic accounting to active profit management."
+      },
+      {
+        "question": "What if I want to change my plan or cancel the subscription?",
+        "answer": "Yes, you have full control over your subscription. You can change your plan at any time — upgrade or downgrade it. Subscription cancellation is also possible according to the contract terms. We operate transparently."
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Want a controlled and",
+    "titleSpan": "profitable",
+    "titleEnd": "auto service?",
+    "description": "Leave your contact details and we will propose an implementation format tailored to your service: taking into account the current team size and goals.",
+    "writeUs": "Write to us",
+    "callUs": "Call us",
+    "submitBtn": "Submit an application",
+    "form": {
+      "namePlaceholder": "Your Name *",
+      "phonePlaceholder": "Phone *",
+      "cityPlaceholder": "City",
+      "postsPlaceholder": "Number of posts",
+      "formatPlaceholder": "Auto service format",
+      "submitBtn": "Submit application",
+      "submittingBtn": "Sending...",
+      "successAlert": "Application sent successfully!",
+      "errorAlert": "Sending error. Please try again later.",
+      "networkError": "Connection error. Check your internet.",
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameTooLong": "Name cannot be longer than 20 characters",
+        "phoneRequired": "Phone is required",
+        "phoneTooShort": "Number must contain at least 9 digits",
+        "phoneTooLong": "Number cannot contain more than 12 digits",
+        "cityTooLong": "City name is too long",
+        "numbersOnly": "Only numbers",
+        "invalidFormat": "Allowed: numbers, letters, %, +, spaces and hyphen"
+      }
+    }
+  },
+  "footer": {
+    "description": "Operating system for car services",
+    "demoButton": "Request a demo",
+    "navigation": "Navigation",
+    "contacts": "Contacts",
+    "socialNetworks": "Social networks",
+    "copyright": "All rights reserved.",
+    "location": "Ukraine / Estonia",
+    "links": {
+      "suppliers": "Suppliers",
+      "resellers": "Resellers",
+      "integrators": "Integrators",
+      "franchisees": "Franchisees",
+      "forInvestors": "For investors",
+      "forServices": "For car services"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "offer": "Offer Agreement"
+    }
+  }
+}
