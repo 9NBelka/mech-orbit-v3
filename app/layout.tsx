@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.scss';
 
 export const metadata: Metadata = {
@@ -11,5 +12,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return (
+    <html>
+      <body>
+        {children}
+        <Script
+          src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBwayAIVduY2IXuAPcUyJ9-H8h-is8BWbE&libraries=places'
+          strategy='beforeInteractive'
+        />
+      </body>
+    </html>
+  );
 }

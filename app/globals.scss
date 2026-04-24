@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter/Inter-VariableFont_opsz_wght.ttf') format('truetype');
-  font-weight: 100 900; 
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -9,13 +9,17 @@
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype');
-  font-weight: 100 900; 
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -105,12 +109,52 @@ p {
 
   //service-setup
 
-  --bg-primary: #0B0F14;
-  --bg-cards: rgba(255, 255, 255, .05);
-  --bright-green: #9EF01A;
-  --dark-green: #3F5B1E;
-  --text-main: #E2E8F0;
-  --text-gray: #94A3B8;
+  --bg-primary: #0b0f14;
+  --bg-cards: rgba(255, 255, 255, 0.05);
+  --bright-green: #9ef01a;
+  --dark-green: #3f5b1e;
+  --text-main: #e2e8f0;
+  --text-gray: #94a3b8;
   --dark-blur: #144049;
   --font: Arial, sans-serif;
+}
+
+.pac-container {
+  background-color: #222;
+  border-top: 1px solid #111;
+
+  & .pac-item {
+    color: #fff;
+    border-top: 1px solid #111;
+  }
+
+  & .pac-item-query {
+    font-size: 13px;
+    padding-right: 3px;
+    color: #fff;
+  }
+}
+
+.pac-container {
+  border-radius: 0.5vw;
+}
+
+.hdpi.pac-logo::after {
+  display: none !important;
+}
+
+.pac-logo:after {
+  display: none !important;
+  content: '';
+  padding: 1px 1px 1px 0;
+  height: 18px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: right;
+  display: block;
+  background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);
+  background-position: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 120px 14px;
+  background-size: 120px 14px;
 }

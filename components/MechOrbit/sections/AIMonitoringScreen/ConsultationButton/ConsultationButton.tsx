@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './ConsultationButton.module.scss';
+import styles from '../AIMonitoringScreen.module.scss';
 import { BsArrowRightShort } from 'react-icons/bs';
 
 interface ConsultationButtonProps {

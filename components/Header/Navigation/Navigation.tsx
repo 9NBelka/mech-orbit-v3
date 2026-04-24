@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './Navigation.module.scss';
 import LangSwitcher from '../../LangSwitcher/LangSwitcher';
 
@@ -27,12 +28,28 @@ export default function Navigation({
   langSwitcher,
   loginButtonText,
 }: NavigationProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Главная страница — /{lang} или /{lang}/
+  const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
+
+  const handleNavClick = (sectionId: string) => {
+    if (isHomePage) {
+      // Уже на главной — просто скроллим
+      handleScroll(sectionId);
+    } else {
+      // На другой странице — переходим на главную с якорем
+      router.push(`/${currentLang}#${sectionId}`);
+    }
+  };
+
   return (
     <nav className={clsx(styles.nav, tablet && styles.navMobile)}>
       {onFooterAndHeaderTextLinksMain.map((info, index) => (
         <a
           key={index}
-          onClick={() => handleScroll(info.linkToPage)}
+          onClick={() => handleNavClick(info.linkToPage)}
           className={styles.navLink}
           style={{ cursor: 'pointer' }}>
           {info.title}

@@ -8,10 +8,5 @@ export default function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = use(params);
-
-  return (
-    <html lang={lang}>
-      <body>{children}</body>
-    </html>
-  );
+  return <div lang={lang}>{children}</div>;
 }

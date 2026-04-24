@@ -1,8 +1,15 @@
-'use client';
-
+import Link from 'next/link';
 import styles from './Footer.module.scss';
-import { BsEnvelope, BsFacebook, BsGeoAlt, BsInstagram, BsTelegram, BsTelephone } from 'react-icons/bs';
-import LangLink from '@/components/LangLink/LangLink';
+import {
+  BsEnvelope,
+  BsFacebook,
+  BsGeoAlt,
+  BsInstagram,
+  BsTelegram,
+  BsTelephone,
+} from 'react-icons/bs';
+import FooterScrollButton from './FooterScrollButton/FooterScrollButton';
+import FooterNavLink from './FooterNavLink/FooterNavLink';
 
 interface NavLink {
   title: string;
@@ -11,6 +18,7 @@ interface NavLink {
 
 interface FooterProps {
   onFooterAndHeaderTextLinksMain: NavLink[];
+  lang: string;
   t: {
     description: string;
     demoButton: string;
@@ -35,12 +43,8 @@ interface FooterProps {
   };
 }
 
-export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProps) {
+export default function Footer({ onFooterAndHeaderTextLinksMain, lang, t }: FooterProps) {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <footer className={styles.footer}>
@@ -53,9 +57,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProp
               <p className={styles.slogan}>#Taking back control</p>
               <p className={styles.description}>{t.description}</p>
             </div>
-            <a className={styles.button} onClick={() => scrollToSection('tryToStart')} style={{ cursor: 'pointer' }}>
-              {t.demoButton}
-            </a>
+            <FooterScrollButton label={t.demoButton} targetSection='tryToStart' />
           </div>
 
           <div className={styles.linksAndServicesBlock}>
@@ -64,9 +66,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProp
               <ul>
                 {onFooterAndHeaderTextLinksMain.map((info, idx) => (
                   <li key={idx}>
-                    <a onClick={() => scrollToSection(info.linkToPage)} className={styles.navigationLinks} style={{ cursor: 'pointer' }}>
-                      {info.title}
-                    </a>
+                    <FooterNavLink title={info.title} linkToPage={info.linkToPage} />
                   </li>
                 ))}
               </ul>
@@ -75,27 +75,55 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProp
             <div className={styles.servicesSection}>
               <h4>MECH Orbit</h4>
               <ul>
-                <li><a href='https://crmmech.com' target='_blank'>CRMmech</a></li>
-                <li><a href='https://mech.vin/ua' target='_blank'>MechVin</a></li>
-                <li><a href='https://book.vin/ua' target='_blank'>BookVin</a></li>
+                <li>
+                  <a href={`https://crmmech.com/${lang}`} target='_blank'>
+                    CRMmech
+                  </a>
+                </li>
+                <li>
+                  <a href={`https://mech.vin/${lang}`} target='_blank'>
+                    MechVin
+                  </a>
+                </li>
+                <li>
+                  <a href={`https://book.vin/${lang}`} target='_blank'>
+                    BookVin
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div className={styles.servicesSection}>
               <h4>MECH Partners</h4>
               <ul>
-                <li><a href='https://mech.partners/ua' target='_blank'>{t.links.suppliers}</a></li>
-                <li><a href='#' className={styles.linkOff}>{t.links.resellers}</a></li>
-                <li><a href='#' className={styles.linkOff}>{t.links.integrators}</a></li>
-                <li><a href='#' className={styles.linkOff}>{t.links.franchisees}</a></li>
+                <li>
+                  <a href={`https://mech.partners/${lang}`} target='_blank'>
+                    {t.links.suppliers}
+                  </a>
+                </li>
+                <li>
+                  <a className={styles.linkOff}>{t.links.resellers}</a>
+                </li>
+                <li>
+                  <a className={styles.linkOff}>{t.links.integrators}</a>
+                </li>
+                <li>
+                  <a className={styles.linkOff}>{t.links.franchisees}</a>
+                </li>
               </ul>
             </div>
 
             <div className={styles.servicesSection}>
               <h4>MECH Capital</h4>
               <ul>
-                <li><a href='https://mech.capital' target='_blank'>{t.links.forInvestors}</a></li>
-                <li><a href='#' className={styles.linkOff}>{t.links.forServices}</a></li>
+                <li>
+                  <a href={`https://mech.capital/${lang}`} target='_blank'>
+                    {t.links.forInvestors}
+                  </a>
+                </li>
+                <li>
+                  <a className={styles.linkOff}>{t.links.forServices}</a>
+                </li>
               </ul>
             </div>
 
@@ -110,10 +138,10 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProp
                   <BsTelephone className={styles.footerContactIcon} />
                   +380 (68) 550 42 02
                 </a>
-                <a className={styles.contactLink}>
+                <span className={styles.contactLink}>
                   <BsGeoAlt className={styles.footerContactIcon} />
                   {t.location}
-                </a>
+                </span>
               </div>
               <div className={styles.social}>
                 <h5>{t.socialNetworks}</h5>
@@ -135,17 +163,19 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, t }: FooterProp
 
         <div className={styles.bottom}>
           <div className={styles.copyright}>
-            <p>&copy; {currentYear} MECHORBIT. {t.copyright}</p>
+            <p>
+              &copy; {currentYear} MECHORBIT. {t.copyright}
+            </p>
           </div>
           <div className={styles.socialsTags}>
-            <a>Socials: @mechorbit • @mech_orbit • @mechorbit_ai</a>
+            <span>Socials: @mechorbit • @mech_orbit • @mechorbit_ai</span>
           </div>
         </div>
 
         <div className={styles.legal}>
-          <LangLink to='/privacy-policy' target='_blank'>{t.legal.privacy}</LangLink>
-          <LangLink to='/terms-of-use' target='_blank'>{t.legal.terms}</LangLink>
-          <LangLink to='/public-offer' target='_blank'>{t.legal.offer}</LangLink>
+          <Link href={`/${lang}/privacy-policy`}>{t.legal.privacy}</Link>
+          <Link href={`/${lang}/terms-of-use`}>{t.legal.terms}</Link>
+          <Link href={`/${lang}/public-offer`}>{t.legal.offer}</Link>
         </div>
       </div>
     </footer>

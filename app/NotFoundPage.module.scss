@@ -1,0 +1,116 @@
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #171717;
+  padding: 2vw;
+  position: relative;
+  height: 100vh;
+
+  & h1 {
+    text-align: center;
+    font-size: 10vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-lineh-small);
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  & h2 {
+    text-align: center;
+    font-size: 2vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-lineh-small);
+    letter-spacing: -0.025em;
+    margin-top: 1vw;
+  }
+
+  & .buttonLink {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5vw;
+    padding: 0.55vw 2vw;
+    font-size: 0.9vw;
+    background: var(--color-blue);
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-smallBold);
+    line-height: var(--font-lineh-normal);
+    cursor: pointer;
+    gap: 0.3vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s ease-in-out;
+    margin-top: 2vw;
+
+    &:hover {
+      transform: translateY(-0.1vw);
+      background-color: #3b82f6cc;
+      border: 0.1vw solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 0.1vw 0.25vw 0.15vw #3b82f633;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .notFoundPage {
+    padding: 2vw;
+
+    & h1 {
+      font-size: 30vw;
+      letter-spacing: -0.025em;
+    }
+
+    & h2 {
+      font-size: 5vw;
+      margin-top: 3vw;
+    }
+
+    & .buttonLink {
+      border-radius: 1vw;
+      padding: 1.5vw 7vw;
+      font-size: 3vw;
+      margin-top: 5vw;
+
+      &:hover {
+        transform: translateY(0vw);
+        background-color: #3b82f6cc;
+        border: 0.1vw solid rgba(59, 130, 246, 0.2);
+        box-shadow: 0 0.1vw 0.25vw 0.15vw #3b82f633;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .notFoundPage {
+    padding: 2vw;
+
+    & h1 {
+      font-size: 40vw;
+    }
+
+    & h2 {
+      font-size: 8vw;
+      margin-top: 5vw;
+    }
+
+    & .buttonLink {
+      border-radius: 1.5vw;
+      padding: 2.5vw 10vw;
+      font-size: 4.5vw;
+      margin-top: 7vw;
+    }
+  }
+}

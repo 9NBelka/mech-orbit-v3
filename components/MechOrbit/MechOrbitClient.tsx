@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Header from '../Header/Header';
 
 interface NavLink {
@@ -14,7 +15,11 @@ interface MechOrbitClientProps {
   loginButtonText: string;
 }
 
-export default function MechOrbitClient({ lang, onFooterAndHeaderTextLinksMain, loginButtonText }: MechOrbitClientProps) {
+export default function MechOrbitClient({
+  lang,
+  onFooterAndHeaderTextLinksMain,
+  loginButtonText,
+}: MechOrbitClientProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -23,11 +28,17 @@ export default function MechOrbitClient({ lang, onFooterAndHeaderTextLinksMain, 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    const hash = window.location.hash?.split('#').filter(Boolean)[0];
+    if (hash) {
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
     }
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

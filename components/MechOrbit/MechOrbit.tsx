@@ -11,7 +11,7 @@ import ForWhoScreen from './sections/ForWhoScreen/ForWhoScreen';
 import FAQScreen from './sections/FAQScreen/FAQScreen';
 import TariffsScreen from './sections/TariffsScreen/TariffsScreen';
 import ContactsScreen from './sections/ContactsScreen/ContactsScreen';
-import Footer from './sections/Footer/Footer';
+import Footer from '../Footer/Footer';
 
 export default function MechOrbit({ lang }: { lang: string }) {
   const t = getT(lang);
@@ -27,21 +27,17 @@ export default function MechOrbit({ lang }: { lang: string }) {
 
   return (
     <div>
-      <MechOrbitClient
-        lang={lang}
-        onFooterAndHeaderTextLinksMain={navLinks}
-        loginButtonText={t.header.loginButton}
-      />
       <main>
-        <Hero 
+        <Hero
           badge={t.hero.badge}
           headline={t.hero.headline}
           headlineTwo={t.hero.headlineTwo}
           descriptionTitle={t.hero.descriptionTitle}
           subDescription={t.hero.subDescription}
           button={t.hero.button}
-          list={t.hero.list}/>
-         <AboutUsScreen
+          list={t.hero.list}
+        />
+        <AboutUsScreen
           tag={t.aboutUs.tag}
           title={t.aboutUs.title}
           description={t.aboutUs.description}
@@ -55,7 +51,7 @@ export default function MechOrbit({ lang }: { lang: string }) {
           learnMoreButton={t.aboutUsBookvin.learnMoreButton}
           cards={t.aboutUsBookvin.cards}
         />
-         <AboutUsScreenVinApp
+        <AboutUsScreenVinApp
           title={t.aboutUsVinapp.title}
           description={t.aboutUsVinapp.description}
           learnMoreButton={t.aboutUsVinapp.learnMoreButton}
@@ -70,7 +66,7 @@ export default function MechOrbit({ lang }: { lang: string }) {
           conclusionText={t.whyUs.conclusionText}
           items={t.whyUs.items}
         />
-         <WhatDoWeHaveScreen
+        <WhatDoWeHaveScreen
           headlineSpan={t.whatDoWeHave.headlineSpan}
           headline={t.whatDoWeHave.headline}
           description={t.whatDoWeHave.description}
@@ -87,10 +83,15 @@ export default function MechOrbit({ lang }: { lang: string }) {
           integrations={t.forWho.integrations}
         />
         <TariffsScreen t={t.tariffs} />
-        <FAQScreen tag={t.faq.tag} headline={t.faq.headline} headlineSpan={t.faq.headlineSpan} description={t.faq.description} faqs={t.faq.faqs} />
+        <FAQScreen
+          tag={t.faq.tag}
+          headline={t.faq.headline}
+          headlineSpan={t.faq.headlineSpan}
+          description={t.faq.description}
+          faqs={t.faq.faqs}
+        />
         <ContactsScreen t={t.contacts} />
       </main>
-      <Footer onFooterAndHeaderTextLinksMain={navLinks} t={t.footer} />
     </div>
   );
 }

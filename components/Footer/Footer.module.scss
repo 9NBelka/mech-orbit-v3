@@ -610,11 +610,25 @@
     line-height: var(--font-lineh-normal);
     transition: color 0.3s ease;
   }
+
+  & span {
+    text-decoration: none;
+    font-size: 0.6vw;
+    color: rgba(98, 116, 142, 1);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+    transition: color 0.3s ease;
+  }
 }
 
 @media (max-width: 1024px) {
   .socialsTags {
     a {
+      font-size: 1.4vw;
+    }
+
+    & span {
       font-size: 1.4vw;
     }
   }
@@ -623,6 +637,11 @@
 @media (max-width: 576px) {
   .socialsTags {
     a {
+      font-size: 3.2vw;
+      margin-top: 1.5vw;
+    }
+
+    & span {
       font-size: 3.2vw;
       margin-top: 1.5vw;
     }
