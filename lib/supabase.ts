@@ -47,15 +47,11 @@ export async function getPosts(): Promise<Post[]> {
 
 // Получить пост по slug (любой язык)
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const { data, error } = await supabase
-    .from('posts')
-    .select('*')
-    .or(`ua_slug.eq.${slug},ru_slug.eq.${slug},en_slug.eq.${slug}`)
-    .single();
+  const { data, error } = await supabase.from('posts').select('*');
 
-  if (error) {
-    console.error(error);
-    return null;
-  }
-  return data;
+  if (error || !data) return null;
+
+  const post = data.find((p) => p.ua_slug === slug || p.ru_slug === slug || p.en_slug === slug);
+
+  return post || null;
 }

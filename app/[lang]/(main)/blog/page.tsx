@@ -51,38 +51,14 @@ function getExcerpt(content: string, maxLength = 120) {
   return content.slice(0, maxLength).trimEnd() + ' [...]';
 }
 
-// Моковые данные пока нет Supabase
-const MOCK_POSTS: Post[] = [
-  {
-    id: 1,
-    status: 'published',
-    image_url: null,
-    created_at: new Date().toISOString(),
-    ua_title: 'Тестовий пост',
-    ua_content: 'Тестовий вміст статті для перевірки відображення блогу.',
-    ua_meta_title: '',
-    ua_meta_description: '',
-    ua_slug: 'test-post-ua',
-    ru_title: 'Тестовый пост',
-    ru_content: 'Тестовое содержимое статьи для проверки отображения блога.',
-    ru_meta_title: '',
-    ru_meta_description: '',
-    ru_slug: 'test-post-ru',
-    en_title: 'Test post',
-    en_content: 'Test article content for checking blog display.',
-    en_meta_title: '',
-    en_meta_description: '',
-    en_slug: 'test-post-en',
-  },
-];
-
 export default async function BlogPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const l = (lang as Lang) || 'ua';
   const t = ui[l] || ui.ua;
 
-  // Когда будет Supabase — заменить MOCK_POSTS на: const posts = await getPosts();
-  const posts = MOCK_POSTS;
+  const posts = await getPosts();
+
+  console.log(posts);
 
   return (
     <div className={styles.blogPage}>

@@ -29,59 +29,32 @@ function formatDate(dateStr: string, lang: Lang) {
   );
 }
 
-// Моковые данные — заменить на getPostBySlug(slug) когда будет Supabase
-const MOCK_POST: Post = {
-  id: 1,
-  status: 'published',
-  image_url: null,
-  created_at: new Date().toISOString(),
-  ua_title: 'Тестовий пост',
-  ua_content: 'Тестовий вміст статті для перевірки відображення блогу.',
-  ua_meta_title: 'Тестовий пост',
-  ua_meta_description: 'Опис',
-  ua_slug: 'test-post-ua',
-  ru_title: 'Тестовый пост',
-  ru_content: 'Тестовое содержимое статьи.',
-  ru_meta_title: 'Тестовый пост',
-  ru_meta_description: 'Описание',
-  ru_slug: 'test-post-ru',
-  en_title: 'Test post',
-  en_content: 'Test article content.',
-  en_meta_title: 'Test post',
-  en_meta_description: 'Description',
-  en_slug: 'test-post-en',
-};
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string; slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: any) {
   const { lang, slug } = await params;
   const l = (lang as Lang) || 'ua';
 
-  // Заменить на: const post = await getPostBySlug(slug);
-  const post = MOCK_POST;
+  const post = await getPostBySlug(slug);
+
+  // console.log('SLUG:', slug);
+  // console.log('POST:', post);
+
   if (!post) return {};
 
   const { metaTitle, metaDescription } = getPostFields(post, l);
+
   return {
     title: metaTitle,
     description: metaDescription,
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ lang: string; slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: any) {
   const { lang, slug } = await params;
   const l = (lang as Lang) || 'ua';
   const t = ui[l] || ui.en;
 
-  // Заменить на: const post = await getPostBySlug(slug);
-  const post = MOCK_POST;
+  const post = await getPostBySlug(slug);
+
   if (!post) notFound();
 
   const { title, content } = getPostFields(post, l);
@@ -104,9 +77,7 @@ export default async function BlogPostPage({
         )}
 
         <div className={styles.content}>
-          {content
-            .split('\n')
-            .map((paragraph, i) => (paragraph.trim() ? <p key={i}>{paragraph}</p> : null))}
+          {content.split('\n').map((p, i) => (p.trim() ? <p key={i}>{p}</p> : null))}
         </div>
       </div>
     </article>
