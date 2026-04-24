@@ -112,10 +112,31 @@ function getIcon(type: 'house' | 'shop' | 'camera' | 'person' | 'puzzle', classN
   return <BsPersonFill className={className} />;
 }
 
+type IconType = 'house' | 'shop' | 'camera' | 'person' | 'puzzle';
+
+type ListItem = {
+  title: string;
+  greyColor?: boolean;
+  status?: string;
+  icon?: IconType;
+};
+
+type Tariff = {
+  code: string;
+  title: string;
+  mainStatus: string;
+  statusIcon: 'house' | 'shop';
+  price: number;
+  buttonText: string;
+  list: ListItem[];
+};
+
 export default function TariffsAfterRegisterPage() {
-  const params = useParams();
-  const lang = (params?.lang as Lang) || 'ua';
-  const workshop_uuid = params?.workshop_uuid as string;
+  const params = useParams<{ lang?: Lang; workshop_uuid?: string }>();
+
+  const lang = params?.lang || 'ua';
+  const workshop_uuid = params?.workshop_uuid;
+
   const t = translations[lang] || translations.ua;
 
   const [email, setEmail] = useState<string | null>(null);
@@ -125,7 +146,6 @@ export default function TariffsAfterRegisterPage() {
 
   useEffect(() => {
     if (!workshop_uuid) {
-      setLoading(false);
       return;
     }
     fetch(`${API_URL}/api/v1/workshops/get_owner?workshop_uuid=${workshop_uuid}`)
@@ -144,7 +164,7 @@ export default function TariffsAfterRegisterPage() {
     return formatPrice(Math.round(basePrice * 0.8));
   };
 
-  const handleSelectTariff = async (tariff: { code: string; price: number }) => {
+  const handleSelectTariff = async (tariff: Tariff) => {
     if (loading || !email) return;
     setPayLoading(true);
     try {
@@ -168,7 +188,7 @@ export default function TariffsAfterRegisterPage() {
     }
   };
 
-  const tariffsInfo = [
+  const tariffsInfo: Tariff[] = [
     {
       code: 'Free',
       title: 'Free',
