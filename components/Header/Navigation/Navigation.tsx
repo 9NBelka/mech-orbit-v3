@@ -32,16 +32,22 @@ export default function Navigation({
   const router = useRouter();
 
   // Главная страница — /{lang} или /{lang}/
-  const isHomePage = pathname === `/${currentLang}` || pathname === `/${currentLang}/`;
+  const isHomePage = pathname.startsWith(`/${currentLang}`);
 
   const handleNavClick = (sectionId: string) => {
-    if (isHomePage) {
-      // Уже на главной — просто скроллим
-      handleScroll(sectionId);
-    } else {
-      // На другой странице — переходим на главную с якорем
-      router.push(`/${currentLang}#${sectionId}`);
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      return;
     }
+
+    // если элемента нет — переходим на главную и потом скроллим
+    router.push(`/${currentLang}`);
+
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
   };
 
   return (
