@@ -47,7 +47,7 @@ export default function Navigation({
 
     setTimeout(() => {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }, 300);
+    }, 500);
   };
 
   return (
