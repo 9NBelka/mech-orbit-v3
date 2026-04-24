@@ -4,7 +4,8 @@
       "source": "/",
       "has": [
         {
-          "type": "host"
+          "type": "host",
+          "value": "test-nextjs.vercel.app"
         }
       ],
       "destination": "/"
