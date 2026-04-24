@@ -13,7 +13,6 @@ import {
 import clsx from 'clsx';
 import InvoiceModal from '../InvoiceModal/InvoiceModal';
 
-
 const CAMERA_KEYS = ['5mp', '8mp', '12mp'];
 const INSTALL_KEY = 'install';
 
@@ -35,11 +34,41 @@ export default function Calculator({ t }: CalculatorProps) {
   const [isInvoiceModalOpen, setIsInvoiceModalOpen] = useState(false);
 
   const PRODUCT_ROWS = [
-    { icon: <BsShopWindow className={styles.calcIcon} />, name: t.rows[0].name, key: 'rooms', defaultQty: 0, defaultEnabledOptions: ['12mp'] },
-    { icon: <BsGearFill className={styles.calcIcon} />, name: t.rows[1].name, key: 'posts', defaultQty: 1, defaultEnabledOptions: ['5mp'] },
-    { icon: <BsCameraVideo className={styles.calcIcon} />, name: t.rows[2].name, key: 'entry', defaultQty: 0, defaultEnabledOptions: ['5mp'] },
-    { icon: <BsCameraVideo className={styles.calcIcon} />, name: t.rows[3].name, key: 'parking', defaultQty: 0, defaultEnabledOptions: ['12mp'] },
-    { icon: <BsCameraVideo className={styles.calcIcon} />, name: t.rows[4].name, key: 'other', defaultQty: 0, defaultEnabledOptions: [] },
+    {
+      icon: <BsShopWindow className={styles.calcIcon} />,
+      name: t.rows[0].name,
+      key: 'rooms',
+      defaultQty: 0,
+      defaultEnabledOptions: ['12mp'],
+    },
+    {
+      icon: <BsGearFill className={styles.calcIcon} />,
+      name: t.rows[1].name,
+      key: 'posts',
+      defaultQty: 1,
+      defaultEnabledOptions: ['5mp'],
+    },
+    {
+      icon: <BsCameraVideo className={styles.calcIcon} />,
+      name: t.rows[2].name,
+      key: 'entry',
+      defaultQty: 0,
+      defaultEnabledOptions: ['5mp'],
+    },
+    {
+      icon: <BsCameraVideo className={styles.calcIcon} />,
+      name: t.rows[3].name,
+      key: 'parking',
+      defaultQty: 0,
+      defaultEnabledOptions: ['12mp'],
+    },
+    {
+      icon: <BsCameraVideo className={styles.calcIcon} />,
+      name: t.rows[4].name,
+      key: 'other',
+      defaultQty: 0,
+      defaultEnabledOptions: [],
+    },
   ];
 
   const [calculatorRows, setCalculatorRows] = useState(
@@ -49,9 +78,9 @@ export default function Calculator({ t }: CalculatorProps) {
       icon: product.icon,
       quantity: product.defaultQty ?? 0,
       enabledOptions: Object.fromEntries(
-        t.options.map((option) => [option.key, product.defaultEnabledOptions.includes(option.key)])
+        t.options.map((option) => [option.key, product.defaultEnabledOptions.includes(option.key)]),
       ),
-    }))
+    })),
   );
 
   const toggleOption = (rowKey: string, optionKey: string) => {
@@ -61,14 +90,16 @@ export default function Calculator({ t }: CalculatorProps) {
         const willBeEnabled = !productRow.enabledOptions[optionKey];
         let updatedQuantity = productRow.quantity;
         if (willBeEnabled && (!updatedQuantity || updatedQuantity === 0)) updatedQuantity = 1;
-        let newEnabledOptions = { ...productRow.enabledOptions };
+        const newEnabledOptions = { ...productRow.enabledOptions };
         if (CAMERA_KEYS.includes(optionKey)) {
-          CAMERA_KEYS.forEach((key) => { newEnabledOptions[key] = false; });
+          CAMERA_KEYS.forEach((key) => {
+            newEnabledOptions[key] = false;
+          });
           newEnabledOptions[optionKey] = willBeEnabled;
         }
         if (optionKey === INSTALL_KEY) newEnabledOptions[INSTALL_KEY] = willBeEnabled;
         return { ...productRow, quantity: updatedQuantity, enabledOptions: newEnabledOptions };
-      })
+      }),
     );
   };
 
@@ -76,18 +107,18 @@ export default function Calculator({ t }: CalculatorProps) {
     setCalculatorRows((currentRows) =>
       currentRows.map((productRow) => {
         if (productRow.key !== rowKey) return productRow;
-        if (inputValue === '') return { ...productRow, quantity: '' };
+        if (inputValue === '') return { ...productRow, quantity: 0 };
         let numericValue = Number(inputValue);
         if (isNaN(numericValue)) numericValue = 0;
         numericValue = Math.max(0, Math.min(30, numericValue));
         return { ...productRow, quantity: numericValue };
-      })
+      }),
     );
   };
 
   const totalCost = calculatorRows.reduce((sum, productRow) => {
     t.options.forEach((option) => {
-      if (productRow.enabledOptions[option.key]) sum += option.price * (productRow.quantity as number);
+      if (productRow.enabledOptions[option.key]) sum += option.price * productRow.quantity;
     });
     return sum;
   }, 0);
@@ -104,7 +135,9 @@ export default function Calculator({ t }: CalculatorProps) {
       <div className={styles.table}>
         <div className={styles.header}>
           <div className={styles.name}></div>
-          <div className={styles.qty}><p>{t.qtyLabel}</p></div>
+          <div className={styles.qty}>
+            <p>{t.qtyLabel}</p>
+          </div>
           {t.options.map((option) => (
             <div key={option.key} className={styles.option}>
               <p className={styles.optionLabel}>{option.label}</p>
@@ -115,17 +148,26 @@ export default function Calculator({ t }: CalculatorProps) {
         {calculatorRows.map((productRow, index) => (
           <div key={productRow.key} className={styles.row}>
             <div className={styles.name}>
-              {productRow.icon}{productRow.name} {index >= 2 && <span> *</span>}
+              {productRow.icon}
+              {productRow.name} {index >= 2 && <span> *</span>}
             </div>
             <div className={styles.qty}>
-              <input type='number' min='0' max='100' value={productRow.quantity}
-                onChange={(e) => changeQuantity(productRow.key, e.target.value)} />
+              <input
+                type='number'
+                min='0'
+                max='100'
+                value={productRow.quantity}
+                onChange={(e) => changeQuantity(productRow.key, e.target.value)}
+              />
             </div>
             {t.options.map((option) => (
               <div key={option.key} className={styles.option}>
                 <label className={styles.switch}>
-                  <input type='checkbox' checked={productRow.enabledOptions[option.key]}
-                    onChange={() => toggleOption(productRow.key, option.key)} />
+                  <input
+                    type='checkbox'
+                    checked={productRow.enabledOptions[option.key]}
+                    onChange={() => toggleOption(productRow.key, option.key)}
+                  />
                   <span className={styles.slider} />
                 </label>
               </div>
@@ -141,9 +183,16 @@ export default function Calculator({ t }: CalculatorProps) {
             <div className={styles.tableNamePhoneRow}>
               {calculatorRows.map((productRow, index) => (
                 <div key={productRow.key} className={styles.qtyPhoneBlock}>
-                  <p className={styles.name}>{productRow.name} {index >= 2 && <span> *</span>}</p>
-                  <input type='number' min='0' max='100' value={productRow.quantity}
-                    onChange={(e) => changeQuantity(productRow.key, e.target.value)} />
+                  <p className={styles.name}>
+                    {productRow.name} {index >= 2 && <span> *</span>}
+                  </p>
+                  <input
+                    type='number'
+                    min='0'
+                    max='100'
+                    value={productRow.quantity === 0 ? '' : productRow.quantity}
+                    onChange={(e) => changeQuantity(productRow.key, e.target.value)}
+                  />
                 </div>
               ))}
             </div>
@@ -162,8 +211,11 @@ export default function Calculator({ t }: CalculatorProps) {
             {t.options.map((option) => (
               <div key={option.key} className={styles.option}>
                 <label className={styles.switch}>
-                  <input type='checkbox' checked={productRow.enabledOptions[option.key]}
-                    onChange={() => toggleOption(productRow.key, option.key)} />
+                  <input
+                    type='checkbox'
+                    checked={productRow.enabledOptions[option.key]}
+                    onChange={() => toggleOption(productRow.key, option.key)}
+                  />
                   <span className={styles.slider} />
                 </label>
               </div>
@@ -178,19 +230,31 @@ export default function Calculator({ t }: CalculatorProps) {
         <a className={styles.buttonTest} onClick={scrollToContacts} style={{ cursor: 'pointer' }}>
           {t.consultationButton} <BsArrowRightShort className={styles.buttonIcon} />
         </a>
-        <a className={clsx(styles.buttonTest, styles.buttonPayment)} onClick={() => setIsInvoiceModalOpen(true)} style={{ cursor: 'pointer' }}>
-          <BsReceiptCutoff className={styles.buttonIcon} />{t.invoiceButton}
+        <a
+          className={clsx(styles.buttonTest, styles.buttonPayment)}
+          onClick={() => setIsInvoiceModalOpen(true)}
+          style={{ cursor: 'pointer' }}>
+          <BsReceiptCutoff className={styles.buttonIcon} />
+          {t.invoiceButton}
         </a>
         <a href='#' target='_blank' className={clsx(styles.buttonTest, styles.buttonPay)}>
-          <BsCreditCard2Back className={styles.buttonIcon} />{t.payButton}
+          <BsCreditCard2Back className={styles.buttonIcon} />
+          {t.payButton}
         </a>
       </div>
 
       <div className={styles.textBottomCalcBlock}>
-        <p className={styles.textBottomCalc}><span>*</span> {t.bottomNote}</p>
+        <p className={styles.textBottomCalc}>
+          <span>*</span> {t.bottomNote}
+        </p>
       </div>
 
-      <InvoiceModal isOpen={isInvoiceModalOpen} onClose={() => setIsInvoiceModalOpen(false)} totalCost={totalCost} t={t.invoiceModal} />
+      <InvoiceModal
+        isOpen={isInvoiceModalOpen}
+        onClose={() => setIsInvoiceModalOpen(false)}
+        totalCost={totalCost}
+        t={t.invoiceModal}
+      />
     </div>
   );
 }
