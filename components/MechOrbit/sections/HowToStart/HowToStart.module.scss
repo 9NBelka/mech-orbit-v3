@@ -1,0 +1,380 @@
+.howToStartMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 1);
+  position: relative;
+  padding: 5vw 0;
+}
+
+@media (max-width: 1024px) {
+  .howToStartMain {
+    padding: 8vw 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .howToStartMain {
+    padding: 10vw 0;
+  }
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90vw;
+    z-index: 3;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleScreen {
+  text-align: center;
+  font-size: 2.4vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  margin-top: 0.75vw;
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .titleScreen {
+    font-size: 4vw;
+    line-height: var(--font-lineh-small2);
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleScreen {
+    text-align: center;
+    font-size: 6vw;
+  }
+}
+
+.borderLine {
+  width: 65%;
+  height: 0.175vw;
+  border-radius: 2vw;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0),
+    rgba(14, 165, 233, 0.25),
+    rgba(192, 132, 252, 1),
+    rgba(14, 165, 233, 0.25),
+    rgba(14, 165, 233, 0)
+  );
+  position: relative;
+  overflow: visible;
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .borderLine {
+    width: 85%;
+    height: 0.5vw;
+    border-radius: 3vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .borderLine {
+    width: 100%;
+    height: 0.75vw;
+    border-radius: 5vw;
+    margin-top: 4vw;
+  }
+}
+
+.textDescription {
+  width: 60%;
+  text-align: center;
+  font-size: 1vw;
+  color: var(--color-light-gray-two);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .textDescription {
+    width: 100%;
+    font-size: 1.8vw;
+    margin-top: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .textDescription {
+    font-size: 3.6vw;
+    margin-top: 4vw;
+  }
+}
+
+.cardsInfoAlign {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardsInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2vw;
+
+  & .iconAlign {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & .iconArrow {
+      width: 2.5vw;
+      height: 2.5vw;
+      color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  & .cardInfo {
+    display: flex;
+    width: 18%;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5vw 0vw;
+
+    & .iconAndTitleBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1vw;
+
+      & .iconCardBlock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3vw;
+        height: 3vw;
+        border-radius: 0.5vw;
+
+        & .cardTextIcon {
+          text-align: center;
+          font-size: 1.5vw;
+          color: var(--color-light-gray-two);
+          font-family: var(--font-Inter);
+          font-weight: var(--font-weight-bold);
+          line-height: var(--font-lineh-normal);
+
+          &.colorPurple {
+            color: var(--color-pink);
+          }
+
+          &.colorBlue {
+            color: var(--color-blue);
+          }
+
+          &.colorOrange {
+            color: var(--color-orange-for-icon);
+          }
+
+          &.colorGreen {
+            color: var(--color-green-for-icon);
+          }
+        }
+
+        &.classForColorBlue {
+          background: rgba(168, 85, 247, 0.1);
+        }
+
+        &.classForColorPurple {
+          background: rgba(59, 130, 246, 0.1);
+        }
+
+        &.classForColorLightOrange {
+          background: rgba(245, 158, 11, 0.1);
+        }
+
+        &.classForColorLightGreen {
+          background: rgba(85, 247, 96, 0.1);
+        }
+      }
+
+      & .cardInfoTitle {
+        font-size: 0.95vw;
+        color: var(--color-white);
+        font-family: var(--font-Inter);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--font-lineh-small);
+      }
+    }
+
+    & .cardDescription {
+      text-align: center;
+      font-size: 0.8vw;
+      color: var(--color-light-gray-for-fly-block);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal-another);
+      margin-top: 1vw;
+      height: 100%;
+    }
+
+    & .buttonDemoLink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10vw;
+      background: var(--color-blue);
+      padding: 0.7vw 0vw;
+      font-size: 0.75vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-smallStrong);
+      line-height: var(--font-lineh-small);
+      border-radius: 0.5vw;
+      margin-top: 1.25vw;
+      cursor: pointer;
+      gap: 0.5vw;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px 0vw 1vw 0vw rgba(59, 130, 246, 0.75);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardsInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 5vw;
+
+    & .iconAlign {
+      display: none;
+    }
+
+    & .cardInfo {
+      width: 48%;
+      border-radius: 2vw;
+      padding: 3vw 3vw;
+      margin-bottom: 0vw;
+
+      & .iconAndTitleBlock {
+        gap: 2vw;
+
+        & .iconCardBlock {
+          width: 7vw;
+          height: 7vw;
+          border-radius: 1vw;
+
+          & .cardTextIcon {
+            text-align: center;
+            font-size: 3vw;
+          }
+        }
+
+        & .cardInfoTitle {
+          font-size: 2.4vw;
+          margin-top: 0vw;
+        }
+      }
+
+      & .cardDescription {
+        font-size: 1.8vw;
+        margin-top: 2vw;
+      }
+
+      & .buttonDemoLink {
+        width: 24vw;
+        padding: 1.5vw 0vw;
+        font-size: 1.8vw;
+        border-radius: 0.8vw;
+        margin-top: 2vw;
+        gap: 0.5vw;
+
+        &:hover {
+          box-shadow: 0px 0vw 0vw 0vw rgba(59, 130, 246, 0);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cardsInfo {
+    gap: 5vw;
+    margin-top: 5vw;
+
+    & .cardInfo {
+      width: 100%;
+      border-radius: 2vw;
+      padding: 5vw;
+      margin-bottom: 0vw;
+
+      & .iconAndTitleBlock {
+        gap: 5vw;
+
+        & .iconCardBlock {
+          width: 14vw;
+          height: 14vw;
+          border-radius: 3vw;
+
+          & .cardTextIcon {
+            text-align: center;
+            font-size: 6vw;
+          }
+        }
+
+        & .cardInfoTitle {
+          font-size: 4.6vw;
+          line-height: var(--font-lineh-normal);
+        }
+      }
+
+      & .cardDescription {
+        font-size: 3.6vw;
+        margin-top: 3vw;
+      }
+
+      & .buttonDemoLink {
+        width: 46vw;
+        padding: 2.5vw 0vw;
+        font-size: 3.6vw;
+        border-radius: 1.5vw;
+        margin-top: 3vw;
+        gap: 0.5vw;
+
+        &:hover {
+          box-shadow: 0px 0vw 0vw 0vw rgba(59, 130, 246, 0);
+        }
+      }
+    }
+  }
+}

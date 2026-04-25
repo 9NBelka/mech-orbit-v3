@@ -319,11 +319,7 @@
         {
           "title": "Постачальники",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "buttonText": "Реєстрація",
           "linkToButton": "https://mech.partners/ua",
           "list": [
@@ -360,11 +356,7 @@
         {
           "title": "Платежі",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "Fondy",
@@ -393,11 +385,7 @@
         {
           "title": "Камери",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "RTSP/ONVIF",
@@ -419,11 +407,7 @@
         {
           "title": "API",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "База ЄДРТЗ",
@@ -786,5 +770,35 @@
       "terms": "Умови використання",
       "offer": "Договір оферти"
     }
+  },
+  "howToStart": {
+    "title": "Як розпочати?",
+    "demoButton": "Запросити демо",
+    "cards": [
+      {
+        "title": "Залиште заявку",
+        "description": "Збільште прибуток, усуньте хаос і звільніться від операційної ями власника.",
+        "classForColor": "classForColorBlue",
+        "classForColorText": "colorPurple"
+      },
+      {
+        "title": "Презентація та тест",
+        "description": "Проводимо онлайн-зустріч, надаємо доступ",
+        "classForColor": "classForColorPurple",
+        "classForColorText": "colorBlue"
+      },
+      {
+        "title": "Налаштування під вас",
+        "description": "Переносимо дані, налаштовуємо",
+        "classForColor": "classForColorLightOrange",
+        "classForColorText": "colorOrange"
+      },
+      {
+        "title": "Навчання персоналу",
+        "description": "Проводимо навчання, ви працюєте.",
+        "classForColor": "classForColorLightGreen",
+        "classForColorText": "colorGreen"
+      }
+    ]
   }
 }

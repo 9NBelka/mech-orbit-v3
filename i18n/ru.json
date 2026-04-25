@@ -319,11 +319,7 @@
         {
           "title": "Поставщики",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "buttonText": "Регистрация",
           "linkToButton": "https://mech.partners/ua",
           "list": [
@@ -360,11 +356,7 @@
         {
           "title": "Платежи",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "Fondy",
@@ -393,11 +385,7 @@
         {
           "title": "Камеры",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "RTSP/ONVIF",
@@ -419,11 +407,7 @@
         {
           "title": "API",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "База ЕГРТС",
@@ -786,5 +770,35 @@
       "terms": "Условия использования",
       "offer": "Договор оферты"
     }
+  },
+  "howToStart": {
+    "title": "Как начать?",
+    "demoButton": "Запросить демо",
+    "cards": [
+      {
+        "title": "Оставьте заявку",
+        "description": "Увеличьте прибыль, устраните хаос и освободитесь от операционной ямы владельца.",
+        "classForColor": "classForColorBlue",
+        "classForColorText": "colorPurple"
+      },
+      {
+        "title": "Презентация и тест",
+        "description": "Проводим онлайн-встречу, даем доступ",
+        "classForColor": "classForColorPurple",
+        "classForColorText": "colorBlue"
+      },
+      {
+        "title": "Настройка под вас",
+        "description": "Переносим данные, настраиваем",
+        "classForColor": "classForColorLightOrange",
+        "classForColorText": "colorOrange"
+      },
+      {
+        "title": "Обучение персонала",
+        "description": "Проводим обучение, вы работаете.",
+        "classForColor": "classForColorLightGreen",
+        "classForColorText": "colorGreen"
+      }
+    ]
   }
 }

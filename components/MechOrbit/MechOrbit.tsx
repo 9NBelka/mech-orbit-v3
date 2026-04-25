@@ -12,6 +12,8 @@ import FAQScreen from './sections/FAQScreen/FAQScreen';
 import TariffsScreen from './sections/TariffsScreen/TariffsScreen';
 import ContactsScreen from './sections/ContactsScreen/ContactsScreen';
 import Footer from '../Footer/Footer';
+import BlogPreviewSection from './sections/BlogPreviewSection/BlogPreviewSection';
+import HowToStart from './sections/HowToStart/HowToStart';
 
 export default function MechOrbit({ lang }: { lang: string }) {
   const t = getT(lang);
@@ -73,6 +75,7 @@ export default function MechOrbit({ lang }: { lang: string }) {
           cards={t.whatDoWeHave.cards}
           textAndList={t.whatDoWeHave.textAndList}
         />
+        {/* <BlogPreviewSection lang={lang} /> полностью готовый блок с постами */}
         <AIMonitoringScreen aimonitoringtext={t.aiMonitoring} />
         <ForWhoScreen
           tag={t.forWho.tag}
@@ -83,6 +86,11 @@ export default function MechOrbit({ lang }: { lang: string }) {
           integrations={t.forWho.integrations}
         />
         <TariffsScreen t={t.tariffs} />
+        <HowToStart
+          title={t.howToStart.title}
+          demoButton={t.howToStart.demoButton}
+          cards={t.howToStart.cards}
+        />
         <FAQScreen
           tag={t.faq.tag}
           headline={t.faq.headline}

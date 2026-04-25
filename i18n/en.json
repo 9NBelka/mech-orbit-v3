@@ -319,11 +319,7 @@
         {
           "title": "Suppliers",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "buttonText": "Registration",
           "linkToButton": "https://mech.partners/ua",
           "list": [
@@ -360,11 +356,7 @@
         {
           "title": "Payments",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "Fondy",
@@ -393,11 +385,7 @@
         {
           "title": "Cameras",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "RTSP/ONVIF",
@@ -419,11 +407,7 @@
         {
           "title": "API",
           "mainStatus": "Link",
-          "tags": [
-            "API",
-            "OAuth",
-            "Webhook"
-          ],
+          "tags": ["API", "OAuth", "Webhook"],
           "list": [
             {
               "pointTitle": "EDRTZ database",
@@ -692,7 +676,7 @@
       }
     ]
   },
-    "faq": {
+  "faq": {
     "tag": "FAQ",
     "headline": "Frequently Asked",
     "headlineSpan": "Questions",
@@ -786,5 +770,35 @@
       "terms": "Terms of Use",
       "offer": "Offer Agreement"
     }
+  },
+  "howToStart": {
+    "title": "How to get started?",
+    "demoButton": "Request a demo",
+    "cards": [
+      {
+        "title": "Submit a request",
+        "description": "Increase profit, eliminate chaos, and free yourself from the operational burden.",
+        "classForColor": "classForColorBlue",
+        "classForColorText": "colorPurple"
+      },
+      {
+        "title": "Presentation & trial",
+        "description": "We hold an online meeting and provide access",
+        "classForColor": "classForColorPurple",
+        "classForColorText": "colorBlue"
+      },
+      {
+        "title": "Setup for you",
+        "description": "We migrate your data and configure the system",
+        "classForColor": "classForColorLightOrange",
+        "classForColorText": "colorOrange"
+      },
+      {
+        "title": "Staff training",
+        "description": "We conduct training, you get to work.",
+        "classForColor": "classForColorLightGreen",
+        "classForColorText": "colorGreen"
+      }
+    ]
   }
 }

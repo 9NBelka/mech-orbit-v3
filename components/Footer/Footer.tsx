@@ -152,7 +152,10 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, lang, t }: Foot
                   <a href='#' aria-label='Telegram' target='_blank'>
                     <BsTelegram className={styles.footerSocialIcon} />
                   </a>
-                  <a href='#' aria-label='Instagram' target='_blank'>
+                  <a
+                    href='https://www.instagram.com/crmmech?igsh=MWh4NDFxZDRub3l5ZA%3D%3D&utm_source=qr'
+                    aria-label='Instagram'
+                    target='_blank'>
                     <BsInstagram className={styles.footerSocialIcon} />
                   </a>
                 </div>

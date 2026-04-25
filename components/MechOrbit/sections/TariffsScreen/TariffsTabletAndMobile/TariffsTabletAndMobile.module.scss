@@ -20,7 +20,7 @@
 
   // Скрываем скроллбар визуально, но оставляем функционал
   &::-webkit-scrollbar {
-    height: 6px;
+    height: 0;
   }
 
   &::-webkit-scrollbar-thumb {
