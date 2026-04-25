@@ -146,10 +146,13 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, lang, t }: Foot
               <div className={styles.social}>
                 <h5>{t.socialNetworks}</h5>
                 <div className={styles.socialLinks}>
-                  <a href='#' aria-label='Facebook' target='_blank'>
+                  <a
+                    href='https://www.facebook.com/assist.control'
+                    aria-label='Facebook'
+                    target='_blank'>
                     <BsFacebook className={styles.footerSocialIcon} />
                   </a>
-                  <a href='#' aria-label='Telegram' target='_blank'>
+                  <a href='https://t.me/mechorbit' aria-label='Telegram' target='_blank'>
                     <BsTelegram className={styles.footerSocialIcon} />
                   </a>
                   <a
