@@ -25,7 +25,7 @@ export default function Header({
   scrollToSection,
   onFooterAndHeaderTextLinksMain,
   currentLang,
-  loginButtonText
+  loginButtonText,
 }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -56,11 +56,9 @@ export default function Header({
       <div className={styles.container}>
         <div className={styles.logoBlock}>
           <div className={styles.logoContainer}>
-            <img
-              src='/mech-orbitLogo.svg'
-              alt='Logo'
-              className={styles.iconLogo}
-            />
+            <a href={`/${currentLang}`}>
+              <img src='/mech-orbitLogo.svg' alt='Logo' className={styles.iconLogo} />
+            </a>
           </div>
         </div>
 
@@ -77,10 +75,11 @@ export default function Header({
           </div>
 
           <button className={styles.burger} onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen
-              ? <FiX className={styles.burgerIcon} />
-              : <FiMenu className={styles.burgerIcon} />
-            }
+            {menuOpen ? (
+              <FiX className={styles.burgerIcon} />
+            ) : (
+              <FiMenu className={styles.burgerIcon} />
+            )}
           </button>
         </div>
       </div>

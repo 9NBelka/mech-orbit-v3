@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getPosts, Post } from '@/lib/supabase';
 import styles from './Blog.module.scss';
+import ReactMarkdown from 'react-markdown';
 
 type Lang = 'ua' | 'ru' | 'en';
 
@@ -46,9 +47,9 @@ function formatDate(dateStr: string, lang: Lang) {
   );
 }
 
-function getExcerpt(content: string, maxLength = 120) {
+function getExcerpt(content: string, maxLength = 260) {
   if (content.length <= maxLength) return content;
-  return content.slice(0, maxLength).trimEnd() + ' [...]';
+  return content.slice(0, maxLength).trimEnd() + '...';
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -62,38 +63,57 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className={styles.blogPage}>
-      <div className={styles.header}>
-        <div className={styles.tag}>{t.tag}</div>
-        <h1 className={styles.headline}>
-          {t.headline} <span>{t.headlineSpan}</span>
-        </h1>
-        <p className={styles.description}>{t.description}</p>
-      </div>
+      <div className={styles.container}>
+        <div className={styles.textContent}>
+          <div className={styles.tagBlock}>
+            <p>{t.tag}</p>
+          </div>
+          <h1 className={styles.titleScreen}>
+            {t.headline} <span>{t.headlineSpan}</span>
+          </h1>
+          <div className={styles.borderLine}></div>
+          <p className={styles.textDescription}>{t.description}</p>
+        </div>
 
-      <div className={styles.grid}>
-        {posts.map((post) => {
-          const { title, content, slug } = getPostFields(post, l);
-          return (
-            <Link key={post.id} href={`/${l}/blog/${slug}`} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                {post.image_url ? (
-                  <img src={post.image_url} alt={title} className={styles.image} />
-                ) : (
-                  <div className={styles.imagePlaceholder} />
-                )}
-              </div>
-              <div className={styles.cardBody}>
-                <div className={styles.categoryTag}>{t.noCategory}</div>
-                <h2 className={styles.cardTitle}>{title}</h2>
-                <p className={styles.cardExcerpt}>{getExcerpt(content)}</p>
-                <div className={styles.cardFooter}>
-                  <span className={styles.date}>{formatDate(post.created_at, l)}</span>
-                  <span className={styles.readMore}>{t.readMore} →</span>
+        <div className={styles.postsBlockMain}>
+          {posts.map((post) => {
+            const { title, content, slug } = getPostFields(post, l);
+            return (
+              <Link key={post.id} href={`/${l}/blog/${slug}`} className={styles.card}>
+                <div className={styles.postImage}>
+                  {post.image_url ? (
+                    <img src={post.image_url} alt={title} className={styles.image} />
+                  ) : (
+                    <div className={styles.imagePlaceholder} />
+                  )}
                 </div>
-              </div>
-            </Link>
-          );
-        })}
+                <div className={styles.postContent}>
+                  <div className={styles.postCategories}>
+                    {/* <span className={styles.category}>{t.noCategory}</span> */}
+                    {/* {categories.map((cat, index) => (
+                    <span key={cat.id} className={styles.category}>
+                      {cat.name}
+                      {index < categories.length - 1 && ', '}
+                    </span>
+                  ))} */}
+                  </div>
+                  <h2 className={styles.postTitle}>{title}</h2>
+
+                  <p className={styles.postExcerpt}>
+                    <ReactMarkdown>{getExcerpt(content)}</ReactMarkdown>
+                  </p>
+
+                  <div className={styles.postDateAndButton}>
+                    <span className={styles.postDate}>{formatDate(post.created_at, l)}</span>
+                    <div className={styles.linkBlock}>
+                      <span className={styles.readMore}>{t.readMore} →</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

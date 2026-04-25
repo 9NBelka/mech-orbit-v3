@@ -42,12 +42,9 @@ export default function Navigation({
       return;
     }
 
-    // если элемента нет — переходим на главную и потом скроллим
+    // Элемента нет — мы на другой странице
+    sessionStorage.setItem('scrollTo', sectionId);
     router.push(`/${currentLang}`);
-
-    setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }, 500);
   };
 
   return (

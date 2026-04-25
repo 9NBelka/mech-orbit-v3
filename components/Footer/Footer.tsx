@@ -66,7 +66,7 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, lang, t }: Foot
               <ul>
                 {onFooterAndHeaderTextLinksMain.map((info, idx) => (
                   <li key={idx}>
-                    <FooterNavLink title={info.title} linkToPage={info.linkToPage} />
+                    <FooterNavLink title={info.title} linkToPage={info.linkToPage} lang={lang} />
                   </li>
                 ))}
               </ul>

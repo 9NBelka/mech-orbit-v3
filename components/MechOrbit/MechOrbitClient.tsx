@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Header from '../Header/Header';
+import { usePathname } from 'next/navigation';
 
 interface NavLink {
   title: string;
@@ -21,21 +22,33 @@ export default function MechOrbitClient({
   loginButtonText,
 }: MechOrbitClientProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 100);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
+    const stored = sessionStorage.getItem('scrollTo');
     const hash = window.location.hash?.split('#').filter(Boolean)[0];
-    if (hash) {
-      setTimeout(() => {
-        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
-    }
-  }, []);
+    if (stored) sessionStorage.removeItem('scrollTo');
+
+    const sectionId = stored || hash;
+    if (!sectionId) return;
+
+    const tryScroll = (attempts = 0) => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else if (attempts < 30) {
+        requestAnimationFrame(() => tryScroll(attempts + 1));
+      }
+    };
+
+    requestAnimationFrame(() => tryScroll());
+  }, [pathname]);
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
