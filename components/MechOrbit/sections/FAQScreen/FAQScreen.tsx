@@ -9,7 +9,7 @@ interface FaqList {
   pointOne: string;
   pointTwo: string;
   pointThree: string;
-  pointFour: string;
+  pointFour?: string;
 }
 
 interface Faq {
