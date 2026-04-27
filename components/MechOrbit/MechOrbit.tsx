@@ -25,6 +25,7 @@ export default function MechOrbit({ lang }: { lang: string }) {
     { title: t.nav.integrations, linkToPage: 'integrations' },
     { title: t.nav.pricing, linkToPage: 'price' },
     { title: t.nav.contacts, linkToPage: 'contacts' },
+    { title: t.nav.blog, linkToPage: 'blog' },
   ];
 
   return (
@@ -75,7 +76,7 @@ export default function MechOrbit({ lang }: { lang: string }) {
           cards={t.whatDoWeHave.cards}
           textAndList={t.whatDoWeHave.textAndList}
         />
-        {/* <BlogPreviewSection lang={lang} /> полностью готовый блок с постами */}
+        <BlogPreviewSection lang={lang} />
         <AIMonitoringScreen aimonitoringtext={t.aiMonitoring} />
         <ForWhoScreen
           tag={t.forWho.tag}

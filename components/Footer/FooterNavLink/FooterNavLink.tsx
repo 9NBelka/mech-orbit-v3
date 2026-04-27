@@ -16,6 +16,11 @@ export default function FooterNavLink({ title, linkToPage, lang }: FooterNavLink
   const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`;
 
   const handleClick = () => {
+    if (linkToPage === 'blog') {
+      router.push(`/${lang}/blog`);
+      return;
+    }
+
     if (isHomePage) {
       document.getElementById(linkToPage)?.scrollIntoView({ behavior: 'smooth' });
     } else {

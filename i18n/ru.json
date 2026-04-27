@@ -5,7 +5,8 @@
     "calculator": "Калькулятор",
     "integrations": "Интеграции",
     "pricing": "Тарифы",
-    "contacts": "Контакты"
+    "contacts": "Контакты",
+    "blog": "Блог"
   },
   "header": {
     "loginButton": "Вход / Регистрация"

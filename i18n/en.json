@@ -5,7 +5,8 @@
     "calculator": "Calculator",
     "integrations": "Integrations",
     "pricing": "Pricing",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "blog": "Blog"
   },
   "header": {
     "loginButton": "Login / Register"

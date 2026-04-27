@@ -20,6 +20,7 @@ export default function MainLayout({
     { title: t.nav.integrations, linkToPage: 'integrations' },
     { title: t.nav.pricing, linkToPage: 'price' },
     { title: t.nav.contacts, linkToPage: 'contacts' },
+    { title: t.nav.blog, linkToPage: 'blog' },
   ];
 
   return (

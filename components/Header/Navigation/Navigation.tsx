@@ -35,16 +35,19 @@ export default function Navigation({
   const isHomePage = pathname.startsWith(`/${currentLang}`);
 
   const handleNavClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // Если это страница — переходим по ссылке
+    if (sectionId === 'blog') {
+      router.push(`/${currentLang}/blog`);
       return;
     }
 
-    // Элемента нет — мы на другой странице
-    sessionStorage.setItem('scrollTo', sectionId);
-    router.push(`/${currentLang}`);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      sessionStorage.setItem('scrollTo', sectionId);
+      router.push(`/${currentLang}`);
+    }
   };
 
   return (
