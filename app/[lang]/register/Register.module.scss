@@ -620,3 +620,199 @@
   background-color: #f2f2f2;
   position: absolute !important;
 }
+
+// Стилизация react-phone-input-2
+.phoneWrapper :global(.react-tel-input) {
+  width: 100%;
+}
+
+.phoneInput {
+  height: auto !important;
+  width: 100% !important;
+  padding: 0.7vw 0.75vw !important;
+  padding-left: 2.5vw !important;
+  font-size: 0.75vw !important;
+  color: var(--color-white) !important;
+  font-family: var(--font-Inter) !important;
+  font-weight: var(--font-weight-regular) !important;
+  line-height: var(--font-lineh-small) !important;
+  outline: none !important;
+  transition: all 0.3s !important;
+  background: #222 !important;
+  border-radius: 0.5vw !important;
+  border: 0.01vw solid rgba(255, 255, 255, 0.3) !important;
+
+  &::placeholder {
+    opacity: 0.9 !important;
+  }
+
+  &:focus {
+    border: 0.01vw solid rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+@media (max-width: 1530px) {
+  .phoneInput {
+    padding-left: 3.25vw !important;
+  }
+}
+
+@media (max-width: 1530px) {
+  .phoneInput {
+    padding-left: 3.5vw !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .phoneInput {
+    padding-left: 4vw !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .phoneInput {
+    padding: 1.5vw 2vw !important;
+    padding-left: 7vw !important;
+    font-size: 1.8vw !important;
+    border-radius: 1vw !important;
+    border: 0.01vw solid rgba(255, 255, 255, 0.3) !important;
+
+    &:focus {
+      border: 0.01vw solid rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .phoneInput {
+    padding-left: 9vw !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .phoneInput {
+    padding: 2.5vw 3vw !important;
+    font-size: 3.6vw !important;
+    border-radius: 1.5vw !important;
+    padding-left: 10vw !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .phoneInput {
+    padding-left: 13vw !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .phoneInput {
+    padding-left: 15vw !important;
+  }
+}
+
+.phoneFlag {
+  background: #222 !important;
+  border-radius: 0.5vw !important;
+  border: 0.01vw solid rgba(255, 255, 255, 0.3) !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  font-size: 0.75vw !important;
+  padding: 0 0.25vw !important;
+}
+
+@media (max-width: 1024px) {
+  .phoneFlag {
+    background: #222 !important;
+    border-radius: 1vw !important;
+    border: 0.01vw solid rgba(255, 255, 255, 0.3) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    font-size: 5.75vw !important;
+    padding: 0 1.5vw !important;
+  }
+}
+
+.phoneDropdown {
+  background: #222 !important;
+  font-size: 0.6vw !important;
+  color: var(--color-white) !important;
+  font-family: var(--font-Inter) !important;
+  font-weight: var(--font-weight-regular) !important;
+  line-height: var(--font-lineh-small) !important;
+  border-radius: 0.5vw !important;
+  border: 0.01vw solid rgba(255, 255, 255, 0.3) !important;
+  width: 17.7vw !important;
+
+  &::-webkit-scrollbar {
+    height: 2vw !important;
+    border-radius: 0.5vw !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 0.5vw !important;
+    height: 2vw !important;
+    width: 1vw !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(54, 54, 54, 0.4);
+    border-radius: 0.5vw !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .phoneDropdown {
+    font-size: 1.6vw !important;
+    border-radius: 1vw !important;
+    width: 70.35vw !important;
+
+    &::-webkit-scrollbar {
+      height: 2vw !important;
+      border-radius: 1vw !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-radius: 1vw !important;
+      height: 6vw !important;
+      width: 1vw !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(54, 54, 54, 0.4);
+      border-radius: 1vw !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .phoneDropdown {
+    font-size: 3.4vw !important;
+    border-radius: 1.5vw !important;
+    width: 78.2vw !important;
+
+    &::-webkit-scrollbar {
+      height: 2vw !important;
+      border-radius: 1.5vw !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-radius: 1.5vw !important;
+      height: 11vw !important;
+      width: 1vw !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(54, 54, 54, 0.4);
+      border-radius: 1.5vw !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}

@@ -7,7 +7,8 @@ import { useRouter, useParams } from 'next/navigation';
 import clsx from 'clsx';
 import { registerStep1 } from '@/lib/api/auth';
 import { BsArrowLeftShort } from 'react-icons/bs';
-import Link from 'next/link';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const translations = {
   ua: {
@@ -22,7 +23,6 @@ const translations = {
     surnameLabel: 'Прізвище*',
     surnamePlaceholder: 'Ваше прізвище',
     phoneLabel: 'Телефон*',
-    phonePlaceholder: '+34 600 000 000',
     emailLabel: 'Email*',
     emailPlaceholder: 'example@domain.com',
     passwordLabel: 'Пароль*',
@@ -63,7 +63,6 @@ const translations = {
     surnameLabel: 'Фамилия*',
     surnamePlaceholder: 'Ваша фамилия',
     phoneLabel: 'Телефон*',
-    phonePlaceholder: '+34 600 000 000',
     emailLabel: 'Email*',
     emailPlaceholder: 'example@domain.com',
     passwordLabel: 'Пароль*',
@@ -104,7 +103,6 @@ const translations = {
     surnameLabel: 'Surname*',
     surnamePlaceholder: 'Your surname',
     phoneLabel: 'Phone*',
-    phonePlaceholder: '+34 600 000 000',
     emailLabel: 'Email*',
     emailPlaceholder: 'example@domain.com',
     passwordLabel: 'Password*',
@@ -136,6 +134,13 @@ const translations = {
 };
 
 type Lang = 'ua' | 'ru' | 'en';
+
+// Дефолтная страна по языку
+const defaultCountry: Record<Lang, string> = {
+  ua: 'ua',
+  ru: 'ru',
+  en: 'gb',
+};
 
 export default function RegisterPage() {
   const params = useParams();
@@ -175,8 +180,7 @@ export default function RegisterPage() {
       else if (value.length < 6) error = t.errorMinPassword;
     }
     if (name === 'phone') {
-      if (!value) error = t.errorRequiredPhone;
-      else if (!/^[0-9+\s()-]{6,20}$/.test(value)) error = t.errorInvalidPhone;
+      if (!value || value.length < 6) error = t.errorRequiredPhone;
     }
     if (name === 'workshopName') error = value.trim() ? '' : t.errorRequiredWorkshop;
     if (name === 'city') error = value.trim() ? '' : t.errorRequiredCity;
@@ -195,6 +199,11 @@ export default function RegisterPage() {
     const { name, value } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
     validateField(name, value);
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, phone: '+' + value }));
+    if (touched.phone) validateField('phone', value);
   };
 
   useEffect(() => {
@@ -265,10 +274,9 @@ export default function RegisterPage() {
     formData.password.length >= 6 &&
     Object.values(errors).every((err) => !err);
 
-  const fields = [
+  const textFields = [
     { name: 'name', type: 'text', label: t.nameLabel, placeholder: t.namePlaceholder },
     { name: 'surname', type: 'text', label: t.surnameLabel, placeholder: t.surnamePlaceholder },
-    { name: 'phone', type: 'tel', label: t.phoneLabel, placeholder: t.phonePlaceholder },
     {
       name: 'workshopName',
       type: 'text',
@@ -309,7 +317,7 @@ export default function RegisterPage() {
           <div className={clsx(styles.formWrapper, isSuccess && styles.fadeOut)}>
             <h2 className={styles.formTitle}>{t.formTitle}</h2>
             <form onSubmit={handleSubmit} className={styles.form}>
-              {fields.map(({ name, type, label, placeholder }) => (
+              {textFields.map(({ name, type, label, placeholder }) => (
                 <div key={name} className={styles.field}>
                   <label className={styles.label}>{label}</label>
                   <div className={styles.inputWrapper}>
@@ -332,7 +340,33 @@ export default function RegisterPage() {
                 </div>
               ))}
 
-              {/* City с Google Autocomplete */}
+              {/* Phone с флагами */}
+              <div className={styles.field}>
+                <label className={styles.label}>{t.phoneLabel}</label>
+                <div className={clsx(styles.inputWrapper, styles.phoneWrapper)}>
+                  <PhoneInput
+                    country={defaultCountry[lang]}
+                    value={formData.phone.replace('+', '')}
+                    onChange={handlePhoneChange}
+                    onBlur={() => {
+                      setTouched((prev) => ({ ...prev, phone: true }));
+                      validateField('phone', formData.phone);
+                    }}
+                    inputClass={clsx(
+                      styles.phoneInput,
+                      errors.phone && touched.phone && styles.errorInput,
+                    )}
+                    buttonClass={styles.phoneFlag}
+                    dropdownClass={styles.phoneDropdown}
+                    preferredCountries={['ua', 'ru', 'gb', 'us', 'de', 'pl']}
+                  />
+                </div>
+                {errors.phone && touched.phone && (
+                  <span className={styles.error}>{errors.phone}</span>
+                )}
+              </div>
+
+              {/* City */}
               <div className={styles.field}>
                 <label className={styles.label}>{t.cityLabel}</label>
                 <div className={styles.inputWrapper}>
