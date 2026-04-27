@@ -5,6 +5,7 @@ import styles from './BlogPost.module.scss';
 import type { Metadata } from 'next';
 import { TiArrowLeftThick } from 'react-icons/ti';
 import ReactMarkdown from 'react-markdown';
+import ShareButtons from '@/components/ShareButtons/ShareButtons';
 
 type Lang = 'ua' | 'ru' | 'en';
 
@@ -89,6 +90,7 @@ export default async function BlogPostPage({ params }: any) {
             <div className={styles.content}>
               <ReactMarkdown>{content}</ReactMarkdown>
             </div>
+            <ShareButtons title={title} lang={l} />
           </div>
         </div>
       </div>
