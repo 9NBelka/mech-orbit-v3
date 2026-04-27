@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+<!-- Главные страницы (мультиязычные) -->
+<url>
+    <loc>https://mechorbit.com/ru</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mechorbit.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mechorbit.com/ua"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechorbit.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechorbit.com/ua"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ua</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mechorbit.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mechorbit.com/ua"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechorbit.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechorbit.com/ua"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mechorbit.com/ru"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mechorbit.com/ua"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechorbit.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechorbit.com/ua"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+</url>
+
+<!-- Основные разделы -->
+<url>
+    <loc>https://mechorbit.com/ru/pricing</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ru/features</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ru/integrations</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ru/contacts</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<!-- Юридические страницы (мультиязычные) -->
+<url>
+    <loc>https://mechorbit.com/ru/privacy-policy</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ua/privacy-policy</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/en/privacy-policy</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ru/terms-of-use</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ua/terms-of-use</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/en/terms-of-use</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ru/public-offer</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/ua/public-offer</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+<url>
+    <loc>https://mechorbit.com/en/public-offer</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+</url>
+
+</urlset>

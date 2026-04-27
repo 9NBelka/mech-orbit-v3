@@ -1,0 +1,59 @@
+User-agent: *
+Allow: /
+
+# Закрываем технические страницы
+Disallow: /login
+Disallow: /register
+Disallow: /ua/login
+Disallow: /ua/register
+Disallow: /en/login
+Disallow: /en/register
+Disallow: /ru/login
+Disallow: /ru/register
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /config/
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /includes/
+Disallow: /uploads/temp/
+Disallow: /uploads/private/
+Disallow: /*?*
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /profile/
+Disallow: /dashboard/
+Disallow: /order/
+Disallow: /invoice/
+Disallow: /payment/
+Disallow: /search/
+Disallow: /filter/
+Disallow: /temp/
+Disallow: /demo/
+Disallow: /test/
+Crawl-delay: 0.5
+
+User-agent: Googlebot
+Allow: /
+Allow: /ru/
+Allow: /ua/
+Allow: /blog/
+Allow: /pricing/
+Allow: /features/
+Disallow: /*?sort=
+Disallow: /*?page=
+Disallow: /*?filter=
+Disallow: /*?order=
+
+User-agent: Googlebot-Image
+Allow: /uploads/
+Allow: /images/
+
+Sitemap: https://mechorbit.com/sitemap.xml
+Sitemap: https://mechorbit.com/sitemap-pages.xml
