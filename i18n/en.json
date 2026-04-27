@@ -225,7 +225,7 @@
       "qtyLabel": "Qty",
       "consultationButton": "Consultation",
       "invoiceButton": "Invoice",
-      "payButton": "Pay",
+      "payButton": "Order",
       "bottomNote": "general cameras — for monitoring and territory overview, without license plate recognition",
       "rows": [
         {
@@ -680,41 +680,52 @@
     "tag": "FAQ",
     "headline": "Frequently Asked",
     "headlineSpan": "Questions",
-    "description": "We have already heard these questions from service station owners, so we answer them before you even call.",
+    "description": "We’ve already heard these questions from service station owners, so we answer them before you even call.",
     "faqs": [
       {
-        "question": "Can I try the system for free?",
-        "answer": "Yes, we provide a 14-day free trial of the software. This is a key part of our \"Trial Journey\", where you can evaluate all the benefits of the system on your own equipment or using our TestCam before making a purchase decision."
+        "question": "Do I really not need to buy a server for video analytics?",
+        "answer": "Yes, that’s our core principle. Most systems on the market require installing a powerful computer with an expensive GPU directly at your service station. MECH Orbit works via cloud computing and optimized algorithms. All you need is a standard IP camera with internet access. Video processing happens in our system, and you receive the final result in your browser or smartphone."
       },
       {
-        "question": "Can I connect my existing cameras?",
-        "answer": "Yes, if your cameras support the standard video streaming protocol (RTSP). The free trial period is ideal for quickly and safely testing this. However, it is important to understand that the quality and stability of the entire system directly depend on the equipment. We recommend using cameras from Reolink."
-      },
-      {
-        "question": "Why do you recommend purchasing new, certified equipment then?",
-        "answer": "Because our goal is to provide you with clear data and guaranteed results, not just to \"somehow connect\" the system. Here are 4 key reasons:",
+        "question": "Which cameras do you recommend and why Reolink?",
+        "answer": "We tested dozens of brands (Hikvision, Dahua, Uniview, etc.) and chose Reolink 5MP.",
         "list": {
-          "pointOne": "Proper positioning: Your existing cameras are most likely installed for general surveillance. MECHorbit analytics require a precise angle for each workstation. Relocating old cameras results in the same installation costs, but without quality guarantees.",
-          "pointTwo": "Technical limitations: Most legacy systems (especially DVRs) are designed as a \"black box\" and block stable video streaming to third-party applications like ours. This makes integration unreliable.",
-          "pointThree": "Analytics accuracy: The modern cameras we offer ensure high accuracy in license plate recognition (LPR) and event detection, even in challenging conditions (nighttime, angled views). This is critical for proper system performance.",
-          "pointFour": "Reliability guarantee: We have tested dozens of models and guarantee flawless system performance only with the equipment we recommend and certify."
+          "pointOne": "First, they provide excellent detail (5 MP is enough to clearly see even small details in a mechanic’s hands).",
+          "pointTwo": "Second, they are extremely stable when working via the cloud.",
+          "pointThree": "Third, the ~€50 price makes them the most cost-effective investment. You can buy them yourself anywhere — we don’t lock you into our hardware."
         }
       },
       {
-        "question": "Okay, cameras need to be purchased. Are they included in the subscription?",
-        "answer": "You purchase the equipment (cameras) once — it becomes your property. The monthly fee is a subscription for the software (SaaS) that \"brings these cameras to life\", providing analytics, CRM, and all other ecosystem features. This approach is more cost-effective for you in the long term."
+        "question": "What if the internet connection at the service station is weak?",
+        "answer": "That’s not a problem. Our system is designed to avoid overloading your network. We don’t stream high-quality video to the cloud 24/7. The system accesses the camera only when needed (car arrival, capturing defect photos for the client). The rest of the time, the camera can record to its internal SD card."
       },
       {
-        "question": "How difficult is it to start using the system?",
-        "answer": "For the \"Trial Journey\", everything is simple. For the \"Full Setup\", basic configuration and training take a few days. You will see the first real results and analytics within a week."
+        "question": "Won’t mechanics resist ‘total surveillance’?",
+        "answer": "This is the most common concern. Our experience shows that good mechanics actually support it because it protects them from unfair customer claims. When every action is recorded, conflicts over wages and work quality disappear. It’s not presented as ‘surveillance’ but as professional protection and a modern service standard."
       },
       {
-        "question": "I already have a CRM. How is MECHorbit better?",
-        "answer": "Standard CRMs are just accounting systems. MECHorbit is a unified organism that connects the real world (cameras) with the digital one (CRM, apps). We automate processes other systems don't see: tracking real working time, eliminating the human factor, and speeding up client approvals. It's a shift from basic accounting to active profit management."
+        "question": "How does video get attached to a work order?",
+        "answer": "It happens automatically. As soon as the camera detects movement in the lift area, the system links the stream to the active work order in the CRM. No need to manually search archives — just open the vehicle card and see all related videos."
       },
       {
-        "question": "What if I want to change my plan or cancel the subscription?",
-        "answer": "Yes, you have full control over your subscription. You can change your plan at any time — upgrade or downgrade it. Subscription cancellation is also possible according to the contract terms. We operate transparently."
+        "question": "How secure is my customer data?",
+        "answer": "We use bank-level encryption. Customer data and service databases are stored on secure servers in EU countries. We fully comply with GDPR and data protection regulations. Only you and your authorized admins have access to your cameras."
+      },
+      {
+        "question": "Can I connect my existing cameras?",
+        "answer": "Yes, if they support RTSP (the standard for 99% of modern IP cameras). Our support team will help check compatibility and connect them in one session. We recommend using Reolink cameras."
+      },
+      {
+        "question": "How does the system help me increase revenue?",
+        "answer": "It’s a business growth tool. Customers gain transparency. When they see repair videos on their smartphone, doubts disappear. Trust turns into loyalty: customers return more often, the average ticket increases, and you benefit from word-of-mouth marketing."
+      },
+      {
+        "question": "Do you offer a trial period?",
+        "answer": "Yes, we provide 14 days of full access to all features. You can connect your camera, create work orders, test mobile apps, and see real analytics. No credit card required — we want you to see the value first."
+      },
+      {
+        "question": "What’s included in free migration?",
+        "answer": "We handle the heavy lifting: transferring your client database, vehicle history, inventory, and work orders. No manual input needed — just provide an export from your old system, and within 1–3 days you’ll be up and running in your new digital environment."
       }
     ]
   },

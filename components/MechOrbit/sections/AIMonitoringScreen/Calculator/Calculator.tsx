@@ -230,14 +230,17 @@ export default function Calculator({ t }: CalculatorProps) {
         <a className={styles.buttonTest} onClick={scrollToContacts} style={{ cursor: 'pointer' }}>
           {t.consultationButton} <BsArrowRightShort className={styles.buttonIcon} />
         </a>
-        <a
+        {/* <a
           className={clsx(styles.buttonTest, styles.buttonPayment)}
           onClick={() => setIsInvoiceModalOpen(true)}
           style={{ cursor: 'pointer' }}>
           <BsReceiptCutoff className={styles.buttonIcon} />
           {t.invoiceButton}
-        </a>
-        <a href='#' target='_blank' className={clsx(styles.buttonTest, styles.buttonPay)}>
+        </a> */}
+        <a
+          href='https://docs.google.com/forms/d/e/1FAIpQLScF7Bg7K9h0wBgkuPckEoFz3r8Aj-ABnts30KvyucOxbDmYWw/viewform'
+          target='_blank'
+          className={clsx(styles.buttonTest, styles.buttonPay)}>
           <BsCreditCard2Back className={styles.buttonIcon} />
           {t.payButton}
         </a>

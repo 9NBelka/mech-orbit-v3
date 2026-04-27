@@ -7,6 +7,7 @@ import {
   BsInstagram,
   BsTelegram,
   BsTelephone,
+  BsYoutube,
 } from 'react-icons/bs';
 import FooterScrollButton from './FooterScrollButton/FooterScrollButton';
 import FooterNavLink from './FooterNavLink/FooterNavLink';
@@ -160,6 +161,12 @@ export default function Footer({ onFooterAndHeaderTextLinksMain, lang, t }: Foot
                     aria-label='Instagram'
                     target='_blank'>
                     <BsInstagram className={styles.footerSocialIcon} />
+                  </a>
+                  <a
+                    href='https://youtube.com/@avtoatmosfera?si=z_NwqOS0csN2kez9'
+                    aria-label='YouTube'
+                    target='_blank'>
+                    <BsYoutube className={styles.footerSocialIcon} />
                   </a>
                 </div>
               </div>

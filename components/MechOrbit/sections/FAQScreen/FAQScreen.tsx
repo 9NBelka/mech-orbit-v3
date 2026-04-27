@@ -26,7 +26,13 @@ interface FAQScreenProps {
   faqs: Faq[];
 }
 
-export default function FAQScreen({ tag, headline, headlineSpan, description, faqs }: FAQScreenProps) {
+export default function FAQScreen({
+  tag,
+  headline,
+  headlineSpan,
+  description,
+  faqs,
+}: FAQScreenProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
@@ -47,22 +53,27 @@ export default function FAQScreen({ tag, headline, headlineSpan, description, fa
           {faqs.map((faq, index) => (
             <div className={styles.accordionItem} key={index}>
               <button
-                className={clsx(styles.accordionButton, activeIndex === index && styles.accordionButtonActive)}
+                className={clsx(
+                  styles.accordionButton,
+                  activeIndex === index && styles.accordionButtonActive,
+                )}
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
                 <span>{faq.question}</span>
-                {activeIndex === index
-                  ? <BsChevronUp className={styles.accordionIcon} />
-                  : <BsChevronDown className={styles.accordionIcon} />
-                }
+                {activeIndex === index ? (
+                  <BsChevronUp className={styles.accordionIcon} />
+                ) : (
+                  <BsChevronDown className={styles.accordionIcon} />
+                )}
               </button>
-              <div className={clsx(styles.accordionContent, activeIndex === index && styles.active)}>
+              <div
+                className={clsx(styles.accordionContent, activeIndex === index && styles.active)}>
                 <p className={styles.answerText}>{faq.answer}</p>
                 {faq.list && (
                   <ul className={styles.faqList}>
                     <li>{faq.list.pointOne}</li>
                     <li>{faq.list.pointTwo}</li>
                     <li>{faq.list.pointThree}</li>
-                    <li>{faq.list.pointFour}</li>
+                    {/* <li>{faq.list.pointFour}</li> */}
                   </ul>
                 )}
               </div>

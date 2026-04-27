@@ -59,7 +59,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
 
   const posts = await getPosts();
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className={styles.blogPage}>
@@ -99,9 +99,9 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h2 className={styles.postTitle}>{title}</h2>
 
-                  <p className={styles.postExcerpt}>
+                  <div className={styles.postExcerpt}>
                     <ReactMarkdown>{getExcerpt(content)}</ReactMarkdown>
-                  </p>
+                  </div>
 
                   <div className={styles.postDateAndButton}>
                     <span className={styles.postDate}>{formatDate(post.created_at, l)}</span>
