@@ -119,13 +119,19 @@ p {
   --font: Arial, sans-serif;
 }
 
+//стили для гугл селекта в регистрации
+
 .pac-container {
   background-color: #222;
-  border-top: 1px solid #111;
+  border-top: 0.1vw solid #111;
 
   & .pac-item {
     color: #fff;
-    border-top: 1px solid #111;
+    border-top: 0.1vw solid #111;
+
+    &:hover {
+      background-color: #333;
+    }
   }
 
   & .pac-item-query {
@@ -158,6 +164,8 @@ p {
   -webkit-background-size: 120px 14px;
   background-size: 120px 14px;
 }
+
+//стили для селекта номера телефона в регистрации
 
 .react-tel-input .flag-dropdown.open .selected-flag {
   background: #222 !important;

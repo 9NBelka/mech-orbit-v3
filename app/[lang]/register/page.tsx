@@ -23,16 +23,16 @@ const translations = {
     surnameLabel: 'Прізвище*',
     surnamePlaceholder: 'Ваше прізвище',
     phoneLabel: 'Телефон*',
-    emailLabel: 'Email*',
-    emailPlaceholder: 'example@domain.com',
-    passwordLabel: 'Пароль*',
-    passwordPlaceholder: '••••••••',
-    workshopLabel: 'Назва автосервісу*',
-    workshopPlaceholder: 'Автосервіс',
     cityLabel: 'Місто*',
     cityPlaceholder: 'Ваше місто',
     addressLabel: 'Адреса*',
     addressPlaceholder: 'Ваша адреса',
+    workshopLabel: 'Назва автосервісу*',
+    workshopPlaceholder: 'Автосервіс',
+    emailLabel: 'Email*',
+    emailPlaceholder: 'example@domain.com',
+    passwordLabel: 'Пароль*',
+    passwordPlaceholder: '••••••••',
     buttonRegister: 'Зареєструватися',
     alreadyHaveAccount: 'Вже є акаунт?',
     loginLink: 'Увійти',
@@ -63,16 +63,16 @@ const translations = {
     surnameLabel: 'Фамилия*',
     surnamePlaceholder: 'Ваша фамилия',
     phoneLabel: 'Телефон*',
-    emailLabel: 'Email*',
-    emailPlaceholder: 'example@domain.com',
-    passwordLabel: 'Пароль*',
-    passwordPlaceholder: '••••••••',
-    workshopLabel: 'Название автосервиса*',
-    workshopPlaceholder: 'Автосервис',
     cityLabel: 'Город*',
     cityPlaceholder: 'Город',
     addressLabel: 'Адрес*',
     addressPlaceholder: 'Адрес',
+    workshopLabel: 'Название автосервиса*',
+    workshopPlaceholder: 'Автосервис',
+    emailLabel: 'Email*',
+    emailPlaceholder: 'example@domain.com',
+    passwordLabel: 'Пароль*',
+    passwordPlaceholder: '••••••••',
     buttonRegister: 'Зарегистрироваться',
     alreadyHaveAccount: 'Уже есть аккаунт?',
     loginLink: 'Войти',
@@ -103,16 +103,16 @@ const translations = {
     surnameLabel: 'Surname*',
     surnamePlaceholder: 'Your surname',
     phoneLabel: 'Phone*',
-    emailLabel: 'Email*',
-    emailPlaceholder: 'example@domain.com',
-    passwordLabel: 'Password*',
-    passwordPlaceholder: '••••••••',
-    workshopLabel: 'Name of workshop*',
-    workshopPlaceholder: 'Workshop',
     cityLabel: 'City*',
     cityPlaceholder: 'Your city',
     addressLabel: 'Address*',
     addressPlaceholder: 'Your address',
+    workshopLabel: 'Name of workshop*',
+    workshopPlaceholder: 'Workshop',
+    emailLabel: 'Email*',
+    emailPlaceholder: 'example@domain.com',
+    passwordLabel: 'Password*',
+    passwordPlaceholder: '••••••••',
     buttonRegister: 'Sign Up',
     alreadyHaveAccount: 'Already have an account?',
     loginLink: 'Log in',
@@ -135,12 +135,7 @@ const translations = {
 
 type Lang = 'ua' | 'ru' | 'en';
 
-// Дефолтная страна по языку
-const defaultCountry: Record<Lang, string> = {
-  ua: 'ua',
-  ru: 'ru',
-  en: 'gb',
-};
+const defaultCountry: Record<Lang, string> = { ua: 'ua', ru: 'ru', en: 'gb' };
 
 export default function RegisterPage() {
   const params = useParams();
@@ -225,9 +220,9 @@ export default function RegisterPage() {
       'name',
       'surname',
       'phone',
-      'workshopName',
       'city',
       'address',
+      'workshopName',
       'email',
       'password',
     ];
@@ -266,26 +261,31 @@ export default function RegisterPage() {
     formData.name.trim() &&
     formData.surname.trim() &&
     formData.phone.trim() &&
-    formData.workshopName.trim() &&
     formData.city.trim() &&
     formData.address.trim() &&
+    formData.workshopName.trim() &&
     formData.email &&
     validateEmail(formData.email) &&
     formData.password.length >= 6 &&
     Object.values(errors).every((err) => !err);
 
-  const textFields = [
-    { name: 'name', type: 'text', label: t.nameLabel, placeholder: t.namePlaceholder },
-    { name: 'surname', type: 'text', label: t.surnameLabel, placeholder: t.surnamePlaceholder },
-    {
-      name: 'workshopName',
-      type: 'text',
-      label: t.workshopLabel,
-      placeholder: t.workshopPlaceholder,
-    },
-    { name: 'address', type: 'text', label: t.addressLabel, placeholder: t.addressPlaceholder },
-    { name: 'email', type: 'email', label: t.emailLabel, placeholder: t.emailPlaceholder },
-  ];
+  const renderField = (name: string, type: string, label: string, placeholder: string) => (
+    <div key={name} className={styles.field}>
+      <label className={styles.label}>{label}</label>
+      <div className={styles.inputWrapper}>
+        <input
+          type={type}
+          name={name}
+          value={formData[name as keyof typeof formData]}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder={placeholder}
+          className={clsx(styles.input, errors[name] && touched[name] && styles.errorInput)}
+        />
+      </div>
+      {errors[name] && touched[name] && <span className={styles.error}>{errors[name]}</span>}
+    </div>
+  );
 
   return (
     <div className={styles.container}>
@@ -317,30 +317,13 @@ export default function RegisterPage() {
           <div className={clsx(styles.formWrapper, isSuccess && styles.fadeOut)}>
             <h2 className={styles.formTitle}>{t.formTitle}</h2>
             <form onSubmit={handleSubmit} className={styles.form}>
-              {textFields.map(({ name, type, label, placeholder }) => (
-                <div key={name} className={styles.field}>
-                  <label className={styles.label}>{label}</label>
-                  <div className={styles.inputWrapper}>
-                    <input
-                      type={type}
-                      name={name}
-                      value={formData[name as keyof typeof formData]}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder={placeholder}
-                      className={clsx(
-                        styles.input,
-                        errors[name] && touched[name] && styles.errorInput,
-                      )}
-                    />
-                  </div>
-                  {errors[name] && touched[name] && (
-                    <span className={styles.error}>{errors[name]}</span>
-                  )}
-                </div>
-              ))}
+              {/* 1. Имя */}
+              {renderField('name', 'text', t.nameLabel, t.namePlaceholder)}
 
-              {/* Phone с флагами */}
+              {/* 2. Фамилия */}
+              {renderField('surname', 'text', t.surnameLabel, t.surnamePlaceholder)}
+
+              {/* 3. Телефон */}
               <div className={styles.field}>
                 <label className={styles.label}>{t.phoneLabel}</label>
                 <div className={clsx(styles.inputWrapper, styles.phoneWrapper)}>
@@ -366,7 +349,7 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              {/* City */}
+              {/* 4. Город */}
               <div className={styles.field}>
                 <label className={styles.label}>{t.cityLabel}</label>
                 <div className={styles.inputWrapper}>
@@ -384,7 +367,16 @@ export default function RegisterPage() {
                 {errors.city && touched.city && <span className={styles.error}>{errors.city}</span>}
               </div>
 
-              {/* Password */}
+              {/* 5. Адрес */}
+              {renderField('address', 'text', t.addressLabel, t.addressPlaceholder)}
+
+              {/* 6. Название автосервиса */}
+              {renderField('workshopName', 'text', t.workshopLabel, t.workshopPlaceholder)}
+
+              {/* 7. Email */}
+              {renderField('email', 'email', t.emailLabel, t.emailPlaceholder)}
+
+              {/* 8. Пароль */}
               <div className={styles.field}>
                 <label className={styles.label}>{t.passwordLabel}</label>
                 <div className={styles.inputWrapper}>
