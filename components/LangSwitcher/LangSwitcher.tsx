@@ -25,7 +25,9 @@ export default function LangSwitcher({
   const current = languages.find((l) => l.code === currentLang) || languages[0];
 
   const changeLanguage = (langCode: string) => {
-    // Заменяем /ua|ru|en в начале пути
+    // Сохраняем выбор пользователя
+    localStorage.setItem('preferredLang', langCode);
+
     const newPath = pathname.replace(/^\/(ua|ru|en)\b/, '') || '/';
     router.push(`/${langCode}${newPath === '/' ? '' : newPath}`);
     setIsOpen(false);

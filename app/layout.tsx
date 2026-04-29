@@ -3,29 +3,39 @@ import Script from 'next/script';
 import './globals.scss';
 
 export const metadata: Metadata = {
-  title: 'CRM для Автосервіса з AI-контролем | MECH Orbit',
+  title: 'CRM для автосервісу з відеоконтролем постів | MECH Orbit',
   description:
-    'MECH Orbit — це автоматизація для СТО з CRM відеоаналітикою та ШІ. Автоматизуйте контроль простоїв, керуйте запчастинами та підвищуйте прибуток. Безкоштовний тест 14 днів.',
-  keywords: ['mech', 'orbit', 'CRM', 'автосервіс', 'СТО', 'відеоаналітика'],
-  authors: [{ name: 'mech.orbit' }],
+    'MECH Orbit — перша в Україні відеоCRM для автосервісу. AI-камери, додаток для механіка та власника авто. Контроль постів, прозорість, прибуток.',
+  keywords: [
+    'CRM для автосервісу',
+    'програма для СТО',
+    'відеоCRM',
+    'облік автосервісу',
+    'програма для автосервісу',
+    'CRM СТО',
+    'керування автосервісом',
+    'додаток для механіка',
+  ],
+  authors: [{ name: 'MECHORBIT OÜ' }],
   robots: { index: true, follow: true },
   verification: { google: '-kUrdMNH0_rdY0cg1-d_KHZfPEquiVpoJW-1EpIqQhE' },
 
   openGraph: {
-    title: 'CRM для Автосервіса з AI-контролем | MECH Orbit',
+    title: 'CRM для автосервісу з відеоконтролем постів | MECH Orbit',
     description:
-      'MECH Orbit — це автоматизація для СТО з CRM відеоаналітикою та ШІ. Автоматизуйте контроль простоїв, керуйте запчастинами та підвищуйте прибуток. Безкоштовний тест 14 днів.',
+      'Перша в Україні відеоCRM для автосервісу: AI-камери, два мобільні додатки, прозорий контроль постів.',
     type: 'website',
     url: 'https://mechorbit.com',
-    siteName: 'MECH Orbit — Операційна система для автосервісів',
+    siteName: 'MECH Orbit',
+    locale: 'uk_UA',
     images: [{ url: 'https://mechorbit.com/mechMetalLogo.jpg' }],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'CRM для Автосервіса з AI-контролем | MECH Orbit',
+    title: 'CRM для автосервісу з відеоконтролем постів | MECH Orbit',
     description:
-      'MECH Orbit — це автоматизація для СТО з CRM відеоаналітикою та ШІ. Безкоштовний тест 14 днів.',
+      'Перша в Україні відеоCRM для автосервісу. AI-камери, додаток для механіка та власника авто.',
     site: '@mech_orbit',
     images: ['https://mechorbit.com/mechMetalLogo.jpg'],
   },
@@ -34,9 +44,9 @@ export const metadata: Metadata = {
     canonical: 'https://mechorbit.com/ua',
     languages: {
       uk: 'https://mechorbit.com/ua',
-      ru: 'https://mechorbit.com/ru',
       en: 'https://mechorbit.com/en',
-      'x-default': 'https://mechorbit.com/ua',
+      ru: 'https://mechorbit.com/ru',
+      'x-default': 'https://mechorbit.com/en',
     },
   },
 
@@ -49,14 +59,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'MECH Orbit',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'CRM для автосервісу',
+  operatingSystem: 'Web, iOS, Android',
+  description:
+    'Перша в Україні відеоCRM для автосервісу з мобільним додатком для механіка та власника авто.',
+  offers: { '@type': 'Offer', priceCurrency: 'UAH' },
+  publisher: { '@type': 'Organization', name: 'MECHORBIT OÜ', url: 'https://mechorbit.com' },
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='uk' dir='ltr'>
       <body suppressHydrationWarning>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
         {children}
         <Script
           src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBwayAIVduY2IXuAPcUyJ9-H8h-is8BWbE&libraries=places'

@@ -34,11 +34,16 @@ export default function MechOrbit({ lang }: { lang: string }) {
         <Hero
           badge={t.hero.badge}
           headline={t.hero.headline}
+          headlineWhite={t.hero.headlineWhite}
           headlineTwo={t.hero.headlineTwo}
+          headlineThree={t.hero.headlineThree}
           descriptionTitle={t.hero.descriptionTitle}
           subDescription={t.hero.subDescription}
           button={t.hero.button}
+          textBottomCar={t.hero.textBottomCar}
+          textBottomCarTwo={t.hero.textBottomCarTwo}
           list={t.hero.list}
+          lang={lang}
         />
         <AboutUsScreen
           tag={t.aboutUs.tag}

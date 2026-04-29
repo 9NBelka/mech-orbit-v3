@@ -12,24 +12,28 @@
     "loginButton": "Login / Register"
   },
   "hero": {
-    "badge": "OS for a profitable auto service",
-    "headline": "MECH Orbit: Digital OS for a Profitable Auto Repair Business",
-    "headlineTwo": "Transparency and profitability of car service",
-    "descriptionTitle": "MECH connects the customer, mechanic, and owner into a single auto service management system.",
-    "subDescription": "One ecosystem. Full control. Predictable results.",
-    "button": "Get started right now — it's free!",
+    "badge": "VIDEO CRM FOR AUTO SERVICE",
+    "headline": "CRM for auto service",
+    "headlineWhite": "that sees every bay",
+    "headlineTwo": "The first video CRM in Ukraine with a mobile app for mechanics and a car owner app.",
+    "headlineThree": "You manage your service on evidence, not words.",
+    "descriptionTitle": "MECH connects the client, mechanic, and owner into a unified auto service management system.",
+    "subDescription": "Running at AutoAtmosphere network — Kharkiv, Cherkasy",
+    "button": "ORDER A DEMO",
+    "textBottomCar": "Which car arrived, when and at which post it is parked.",
+    "textBottomCarTwo": "How long did the car actually work or stand still?",
     "list": [
       {
-        "titleBold": "Customer",
-        "title": "trust, transparency, job approval from a smartphone"
+        "titleBold": "AI cameras",
+        "title": "recognize plates and track bay occupancy"
       },
       {
         "titleBold": "Mechanic",
-        "title": "clear tasks, work tracking, fair pay"
+        "title": "gets the task on their phone and attaches work photos"
       },
       {
-        "titleBold": "Owner",
-        "title": "process control, real analytics, profit in numbers"
+        "titleBold": "Car owner",
+        "title": "sees the history and approves work online"
       }
     ]
   },

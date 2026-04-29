@@ -1,11 +1,36 @@
 .hero {
   position: relative;
-  min-height: 80vh;
+  // min-height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 5vw;
-  padding-bottom: 0vw;
+  padding-top: 6vw;
+  padding-bottom: 5vw;
+  background-image: url('/images/mech-orbitHeroImageCar.webp');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+
+  & .heroDimmer {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  & .heroGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 0) 60%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 1380px) {
@@ -18,8 +43,17 @@
 
 @media (max-width: 1024px) {
   .hero {
-    padding-top: 12vw;
-    padding-bottom: 5vw;
+    padding-top: 14vw;
+    padding-bottom: 7vw;
+    background-image: none;
+
+    & .heroDimmer {
+      display: none;
+    }
+
+    & .heroGradient {
+      display: none;
+    }
   }
 }
 
@@ -31,6 +65,7 @@
 }
 
 .neonCircle {
+  display: none;
   position: absolute;
   border-radius: 50%;
   animation: translateY 4s ease-in-out infinite;
@@ -59,6 +94,7 @@
 
 @media (max-width: 1024px) {
   .neonCircle {
+    display: flex;
     &.bluePrint {
       width: 60vw;
       height: 60vw;
@@ -206,7 +242,7 @@
 @media (max-width: 1024px) {
   .badge {
     gap: 0.5vw;
-    padding: 0.5vw 1vw;
+    padding: 1vw 1.5vw;
     padding-right: 1.5vw;
     border-radius: 2vw;
 
@@ -216,7 +252,7 @@
     }
 
     & p {
-      font-size: 1.65vw;
+      font-size: 2vw;
       letter-spacing: 0.1em;
     }
   }
@@ -252,7 +288,7 @@
 }
 
 .headline {
-  font-size: 1.5vw;
+  font-size: 3.2vw;
   color: var(--color-white);
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-bold);
@@ -262,7 +298,7 @@
   width: 100%;
 
   & .gradientText {
-    font-size: 2.5vw;
+    font-size: 3.2vw;
     background: linear-gradient(to right, rgba(59, 130, 246, 1), rgba(168, 85, 247, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -272,48 +308,70 @@
   }
 
   &.headlineTwo {
-    font-size: 1.45vw;
+    width: 50%;
+    font-size: 1.35vw;
     color: var(--color-white);
     font-family: var(--font-Inter);
     font-weight: var(--font-weight-bold);
     line-height: var(--font-lineh-small2);
-    letter-spacing: -0.025em;
-    padding-left: 0.2vw;
+    // letter-spacing: -0.025em;
+    // padding-left: 0.2vw;
+
+    &.lang_ru {
+      width: 65%;
+    }
   }
 }
 
 @media (max-width: 1024px) {
   .headline {
-    font-size: 5vw;
+    font-size: 7vw;
     letter-spacing: -0.025em;
-    margin-top: 2vw;
+    margin-top: 3vw;
     line-height: var(--font-lineh-small2);
+
+    &.langTitle_ru {
+      font-size: 6.9vw;
+    }
 
     & .gradientText {
       font-size: 7vw;
     }
 
     &.headlineTwo {
-      font-size: 5vw;
+      font-size: 3.6vw;
       letter-spacing: -0.025em;
-      margin-top: 2vw;
-      line-height: var(--font-lineh-small2);
+      margin-top: 3vw;
+      line-height: var(--font-lineh-normal);
+      width: 100%;
+
+      &.lang_ru {
+        width: 100%;
+      }
     }
   }
 }
 
 @media (max-width: 576px) {
   .headline {
-    font-size: 7vw;
+    font-size: 8.5vw;
     letter-spacing: -0.01em;
     margin-top: 5vw;
 
+    &.langTitle_ru {
+      font-size: 8vw;
+
+      & .gradientText {
+        font-size: 8vw;
+      }
+    }
+
     & .gradientText {
-      font-size: 11vw;
+      font-size: 8.5vw;
     }
 
     &.headlineTwo {
-      font-size: 7vw;
+      font-size: 5vw;
       letter-spacing: -0.01em;
       margin-top: 5vw;
     }
@@ -324,7 +382,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.25vw;
-  margin-top: 1vw;
+  margin-top: 2vw;
 
   & .subDescription {
     font-size: 1vw;
@@ -373,7 +431,7 @@
 @media (max-width: 1024px) {
   .descriptionBlock {
     max-width: 100%;
-    margin-top: 2vw;
+    margin-top: 3vw;
 
     & .subDescription {
       font-size: 2.6vw;
@@ -389,7 +447,7 @@
       gap: 1.5vw;
 
       & .description {
-        font-size: 2.2vw;
+        font-size: 2.8vw;
       }
 
       & .checkmarkIcon {
@@ -495,8 +553,8 @@
 
     & .button {
       border-radius: 1vw;
-      padding: 1.5vw 5vw;
-      font-size: 1.8vw;
+      padding: 1.75vw 5.5vw;
+      font-size: 2.4vw;
       cursor: pointer;
       gap: 1vw;
 
@@ -559,7 +617,7 @@
   line-height: var(--font-lineh-normal);
 
   & .subDescription {
-    font-size: 1vw;
+    font-size: 1.35vw;
     color: var(--color-light-gray);
     font-family: var(--font-Inter);
     font-weight: var(--font-weight-bold);
@@ -570,12 +628,13 @@
 
 @media (max-width: 1024px) {
   .note {
-    margin-top: 3vw;
+    margin-top: 4vw;
     font-size: 1.8vw;
 
     & .subDescription {
-      font-size: 2.6vw;
+      font-size: 3.6vw;
       margin-top: 2vw;
+      line-height: var(--font-lineh-normal);
     }
   }
 }
@@ -586,7 +645,7 @@
     font-size: 3.6vw;
 
     & .subDescription {
-      font-size: 4.6vw;
+      font-size: 5vw;
       margin-top: 4vw;
     }
   }
@@ -604,6 +663,97 @@
 
 @media (max-width: 1024px) {
   .visualContent {
+    display: none;
+  }
+}
+
+.lineForFlyBlock {
+  position: absolute;
+  top: 17.1vw;
+  right: 25.2vw;
+  width: 8.7vw;
+  height: 0vw;
+  transform: rotate(75deg);
+  border: 0.001vw solid var(--color-white);
+
+  &.lineForFlyBlockTwo {
+    position: absolute;
+    top: 17.9vw;
+    right: 2.9vw;
+    width: 6.5vw;
+    height: 0vw;
+    transform: rotate(75deg);
+    border: 0.001vw solid var(--color-white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .lineForFlyBlock {
+    display: none;
+  }
+}
+
+.flyBlockWith {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 21.1vw;
+  right: 21.75vw;
+  width: 10.4vw;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.2vw) saturate(180%);
+  padding: 0.9vw 1vw;
+  border: 0.01vw solid rgba(138, 242, 169, 1);
+  border-radius: 0.5vw;
+
+  &.flyBlockWithTwo {
+    top: 21.1vw;
+    right: 0vw;
+    width: 10.5vw;
+    padding: 0.9vw 0.5vw;
+
+    & .flyBlockBlockText {
+      width: 9vw;
+
+      &.langflyBlock_ru {
+        width: 9.5vw;
+
+        & p {
+          font-size: 0.85vw;
+        }
+      }
+    }
+  }
+
+  & .flyBlockBlockText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 7.65vw;
+
+    &.langflyBlock_ru {
+      width: 8.5vw;
+    }
+
+    &.langflyBlock_en {
+      width: 8.5vw;
+    }
+
+    & p {
+      font-size: 0.9vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-normal);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .flyBlockWith {
     display: none;
   }
 }

@@ -135,7 +135,7 @@ const translations = {
 
 type Lang = 'ua' | 'ru' | 'en';
 
-const defaultCountry: Record<Lang, string> = { ua: 'ua', ru: 'ru', en: 'gb' };
+const defaultCountry: Record<Lang, string> = { ua: 'ua', ru: 'ua', en: 'gb' };
 
 export default function RegisterPage() {
   const params = useParams();
@@ -341,7 +341,7 @@ export default function RegisterPage() {
                     )}
                     buttonClass={styles.phoneFlag}
                     dropdownClass={styles.phoneDropdown}
-                    preferredCountries={['ua', 'ru', 'gb', 'us', 'de', 'pl']}
+                    preferredCountries={['ua', 'gb', 'us', 'de', 'pl']}
                   />
                 </div>
                 {errors.phone && touched.phone && (
